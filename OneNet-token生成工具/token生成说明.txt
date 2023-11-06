@@ -1,0 +1,10 @@
+res格式：
+1.API访问：	res参数为：products/{pid}	示例：products/123123	
+2.消息队列MQ连接：	res参数为：mqs/{MQ_ID}	示例：mqs/osndf09nand9f21390
+3.MQTTS设备连接：	res参数为：products/{pid}/devices/{device_name}	示例：products/123123/devices/mydev
+
+et:时间戳，需要大于当前时间。
+
+key：API访问场景，需要使用access_key；MQTTS设备连接，需要使用各设备的key。
+
+method：一般选择md5加密方式即可

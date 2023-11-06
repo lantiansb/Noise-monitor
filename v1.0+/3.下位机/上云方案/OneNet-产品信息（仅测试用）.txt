@@ -1,0 +1,60 @@
+产品ID：qYAZf2aVV6
+access_key：5zuZEW+BN3EPL8eXGb+dj6H7/9F1nfNV0Qm5JbuTn9M=
+
+
+（注意：设备key的%实际上只有一个，这里配合固件里使用printf来进行发送，%%在printf实际上为%）
+设备1名称/ID：NoiseSys
+
+设备1 ID：2123399459
+设备1秘钥：NFFRSnFLaEpJbTliMXp5djFBbUdNd1hxam5xYjdvbTE=
+
+设备1key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys&et=1918097402&method=md5&sign=3%%2FGB121wUakWGwrEMDzrEw%%3D%%3D
+
+
+
+设备2名称/ID：NoiseSys2
+
+设备2 ID：2124598099
+设备2秘钥：dHNGSWtNUkxkUzlXT3NzZWdKc2pKT1ZWYjUwU2FJRlg=
+
+设备2key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys2&et=2018097402&method=md5&sign=E%%2B7DhwPgVNOMGTQuVkHzyg%%3D%%3D
+
+
+
+设备3名称/ID：NoiseSys3
+
+设备3 ID：2124598099
+设备3秘钥：dHNGSWtNUkxkUzlXT3NzZWdKc2pKT1ZWYjUwU2FJRlg=
+
+设备3key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys3&et=2018097402&method=md5&sign=vaQdzyT3haf7OFXdMs%%2Fb5g%%3D%%3D
+
+
+设备4名称/ID：NoiseSys4
+
+设备4 ID：2124598099
+设备4秘钥：dHNGSWtNUkxkUzlXT3NzZWdKc2pKT1ZWYjUwU2FJRlg=
+
+设备4key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys4&et=2018097402&method=md5&sign=kT741g1OnI7TpVH2UQjiLw%%3D%%3D
+
+
+
+设备5名称/ID：NoiseSys5
+
+设备5 ID：2125227418
+设备5秘钥：SHdUdDhSY0QzZVVDWHo4NHJQaHZqY2xrRjhRQTZRQ3Y=
+
+设备5key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys5&et=2018097402&method=md5&sign=k%%2FJC0iDE7gcAxkWudC6npw%%3D%%3D
+
+
+
+设备6名称/ID：NoiseSys6
+
+设备6 ID：2125227565
+设备6秘钥：aThMaDU3T1ZBeGpkY3NqdmludzR2WTh4REloWTFxdXI=
+
+设备6key：version=2018-10-31&res=products%%2FqYAZf2aVV6%%2Fdevices%%2FNoiseSys6&et=2018097402&method=md5&sign=3mDqozYG3cQHUYACkEivtw%%3D%%3D
+
+
+
+用户ID：326890
+用户Accesskey：BtUWf+QIGjEbrwG9IJwZPG5dzSMVOtmbrD3c4dR14emrFxZcwOcQ7UOazaaourpG1EsPZCe6lAa8tXyrP9VX/Q==
