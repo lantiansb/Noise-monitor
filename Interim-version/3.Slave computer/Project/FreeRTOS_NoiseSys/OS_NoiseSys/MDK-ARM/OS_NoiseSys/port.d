@@ -1,0 +1,12 @@
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+os_noisesys\port.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+os_noisesys\port.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+os_noisesys\port.o: ../Core/Inc/FreeRTOSConfig.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+os_noisesys\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
