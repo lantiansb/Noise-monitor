@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "noisen.h": "c",
+        "oled_font.h": "c",
+        "i2c.h": "c",
+        "stm32f1xx_hal_i2c.h": "c",
+        "oled.h": "c"
+    }
+}

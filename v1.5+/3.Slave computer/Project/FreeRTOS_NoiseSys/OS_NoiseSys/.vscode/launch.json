@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "daplink",
+            "servertype": "openocd",
+            "executable": "build\\OS_NoiseSys\\OS_NoiseSys.elf",
+            "runToEntryPoint": "main",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/<target-name>.cfg"
+            ]
+        }
+    ]
+}
