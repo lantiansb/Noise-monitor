@@ -1,0 +1,67 @@
+[2023-11-26 00:55:05]	[done]
+	build successfully !
+
+[2023-11-26 00:58:38]	compilation failed at : "d:\Users\Centaur1\Desktop\22\nRF_test\Core\Src\main.c", exit code: 1
+command: 
+  "D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Hardware -I.cmsis/include -IRTE/_nRF_test -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F103xB --cpu Cortex-M3 --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\nRF_test\__\Core\Src\main.o --no_depend_system_headers --depend .\build\nRF_test\__\Core\Src\main.d .\..\Core\Src\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\Core\Src\main.c", line 132: Error:  #65: expected a ";"
+                  for (uint8_t i == 0; i < 16; i++)
+                                 ^
+".\..\Core\Src\main.c", line 136: Error:  #65: expected a ";"
+                  for (uint8_t i == 0; i < 16; i++)
+                                 ^
+.\..\Core\Src\main.c: 0 warnings, 2 errors
+
+[2023-11-26 00:59:09]	[done]
+	build successfully !
+
+[2023-11-26 01:03:22]	[done]
+	build successfully !
+
+[2023-11-26 01:03:54]	[done]
+	build successfully !
+
+[2023-11-26 01:08:59]	[done]
+	build successfully !
+
+[2023-11-26 01:09:13]	[done]
+	build successfully !
+
+[2023-11-26 01:10:21]	[done]
+	build successfully !
+
+[2023-11-26 01:10:39]	[done]
+	build successfully !
+
+[2023-11-26 01:16:14]	[done]
+	build successfully !
+
+[2023-11-26 01:19:21]	[done]
+	build successfully !
+
+[2023-11-26 01:30:30]	[done]
+	build successfully !
+
+[2023-11-26 01:38:13]	[done]
+	build successfully !
+
+[2023-11-26 01:44:45]	[done]
+	build successfully !
+
+[2023-11-26 01:46:15]	[done]
+	build successfully !
+
+[2023-11-26 01:47:08]	[done]
+	build successfully !
+
+[2023-11-26 01:48:48]	[done]
+	build successfully !
+
+[2023-11-26 01:49:05]	[done]
+	build successfully !
+
+[2023-11-26 01:49:48]	[done]
+	build successfully !
+

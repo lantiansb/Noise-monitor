@@ -1,0 +1,4 @@
+arm-none-eabi-objcopy --update-section ER_IROM1="d:\Users\Centaur1\Desktop\22\nRF_test\MDK-ARM\build\nRF_test\nRF_test.bin" "d:\Users\Centaur1\Desktop\22\nRF_test\MDK-ARM\build\nRF_test\nRF_test.axf" "d:\Users\Centaur1\Desktop\22\nRF_test\MDK-ARM\build\nRF_test\nRF_test.elf"
+
+arm-none-eabi-objcopy: d:\Users\Centaur1\Desktop\22\nRF_test\MDK-ARM\build\nRF_test\nRF_test.elf: warning: allocated section `RW_IRAM1' not in segment
+

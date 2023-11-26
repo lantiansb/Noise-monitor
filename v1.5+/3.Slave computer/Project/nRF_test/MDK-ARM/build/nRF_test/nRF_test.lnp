@@ -1,0 +1,28 @@
+--cpu Cortex-M3 --library_type=microlib --scatter "d:/Users/Centaur1/Desktop/22/nRF_test/MDK-ARM/build/nRF_test/nRF_test.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
+--list .\build\nRF_test\nRF_test.map
+.\build\nRF_test\__\Core\Src\dma.o
+.\build\nRF_test\__\Core\Src\gpio.o
+.\build\nRF_test\__\Core\Src\i2c.o
+.\build\nRF_test\__\Core\Src\main.o
+.\build\nRF_test\__\Core\Src\spi.o
+.\build\nRF_test\__\Core\Src\stm32f1xx_hal_msp.o
+.\build\nRF_test\__\Core\Src\stm32f1xx_it.o
+.\build\nRF_test\__\Core\Src\system_stm32f1xx.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.o
+.\build\nRF_test\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.o
+.\build\nRF_test\__\Hardware\24l01.o
+.\build\nRF_test\__\Hardware\OLED.o
+.\build\nRF_test\startup_stm32f103xb.o -o .\build\nRF_test\nRF_test.axf
