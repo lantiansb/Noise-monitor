@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,
-    "rootDir": "d:\\Users\\Centaur1\\Desktop\\22\\nRF_test\\MDK-ARM",
+    "rootDir": "d:\\tt_Programs_Files\\Project\\noise\\v1.5+\\3.Slave computer\\Project\\nRF_test\\MDK-ARM",
     "dumpPath": "build\\nRF_test",
     "outDir": "build\\nRF_test",
     "ram": 20480,
@@ -90,20 +90,20 @@
             "ro-base": "",
             "rw-base": "",
             "link-scatter": [
-                "\"d:/Users/Centaur1/Desktop/22/nRF_test/MDK-ARM/build/nRF_test/nRF_test.sct\""
+                "\"d:/tt_Programs_Files/Project/noise/v1.5+/3.Slave computer/Project/nRF_test/MDK-ARM/build/nRF_test/nRF_test.sct\""
             ]
         }
     },
     "env": {
-        "workspaceFolder": "d:\\Users\\Centaur1\\Desktop\\22\\nRF_test\\MDK-ARM",
+        "workspaceFolder": "d:\\tt_Programs_Files\\Project\\noise\\v1.5+\\3.Slave computer\\Project\\nRF_test\\MDK-ARM",
         "workspaceFolderBasename": "MDK-ARM",
-        "OutDir": "d:\\Users\\Centaur1\\Desktop\\22\\nRF_test\\MDK-ARM\\build\\nRF_test",
+        "OutDir": "d:\\tt_Programs_Files\\Project\\noise\\v1.5+\\3.Slave computer\\Project\\nRF_test\\MDK-ARM\\build\\nRF_test",
         "OutDirRoot": "build",
         "OutDirBase": "build\\nRF_test",
         "ProjectName": "nRF_test",
         "ConfigName": "nRF_test",
-        "ProjectRoot": "d:\\Users\\Centaur1\\Desktop\\22\\nRF_test\\MDK-ARM",
-        "ExecutableName": "d:\\Users\\Centaur1\\Desktop\\22\\nRF_test\\MDK-ARM\\build\\nRF_test\\nRF_test",
+        "ProjectRoot": "d:\\tt_Programs_Files\\Project\\noise\\v1.5+\\3.Slave computer\\Project\\nRF_test\\MDK-ARM",
+        "ExecutableName": "d:\\tt_Programs_Files\\Project\\noise\\v1.5+\\3.Slave computer\\Project\\nRF_test\\MDK-ARM\\build\\nRF_test\\nRF_test",
         "SYS_Platform": "win32",
         "SYS_DirSep": "\\",
         "SYS_DirSeparator": "\\",
@@ -119,6 +119,6 @@
         "global": "cab97363c56a7cd5c4d6d683dfcaa9f9",
         "c/cpp-compiler": "6b961c7ab25acd2372f6c507ee50ebef",
         "asm-compiler": "99914b932bd37a50b983c5e7c90ae93b",
-        "linker": "22ba250e29a149e274c84b64cce10e07"
+        "linker": "ead536d3ccc3975ab7eb21401adc1bbc"
     }
 }

@@ -61,10 +61,10 @@ void Error_Handler(void);
 #define LED_T_GPIO_Port GPIOC
 #define NSS_Pin GPIO_PIN_4
 #define NSS_GPIO_Port GPIOA
-#define CE_Pin GPIO_PIN_0
-#define CE_GPIO_Port GPIOB
-#define NRF24_IRQ_Pin GPIO_PIN_1
+#define NRF24_IRQ_Pin GPIO_PIN_0
 #define NRF24_IRQ_GPIO_Port GPIOB
+#define CE_Pin GPIO_PIN_8
+#define CE_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

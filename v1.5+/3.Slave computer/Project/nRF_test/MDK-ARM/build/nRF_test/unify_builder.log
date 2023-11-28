@@ -65,3 +65,99 @@ command:
 [2023-11-26 01:49:48]	[done]
 	build successfully !
 
+[2023-11-26 15:46:47]	[done]
+	build successfully !
+
+[2023-11-26 15:51:47]	[done]
+	build successfully !
+
+[2023-11-26 16:29:57]	[done]
+	build successfully !
+
+[2023-11-26 16:47:22]	[done]
+	build successfully !
+
+[2023-11-26 16:50:21]	[done]
+	build successfully !
+
+[2023-11-26 16:54:16]	[done]
+	build successfully !
+
+[2023-11-26 17:06:08]	[done]
+	build successfully !
+
+[2023-11-26 17:13:29]	[done]
+	build successfully !
+
+[2023-11-26 17:13:33]	[done]
+	build successfully !
+
+[2023-11-26 17:24:58]	[done]
+	build successfully !
+
+[2023-11-26 17:43:40]	[done]
+	build successfully !
+
+[2023-11-26 17:44:21]	[done]
+	build successfully !
+
+[2023-11-26 17:48:52]	[done]
+	build successfully !
+
+[2023-11-26 19:14:34]	[done]
+	build successfully !
+
+[2023-11-26 19:15:58]	[done]
+	build successfully !
+
+[2023-11-26 19:21:06]	[done]
+	build successfully !
+
+[2023-11-26 19:28:45]	[done]
+	build successfully !
+
+[2023-11-26 19:35:06]	compilation failed at : "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\nRF_test\Core\Src\main.c", exit code: 1
+command: 
+  "D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Hardware -I.cmsis/include -IRTE/_nRF_test -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F103xB --cpu Cortex-M3 --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\nRF_test\__\Core\Src\main.o --no_depend_system_headers --depend .\build\nRF_test\__\Core\Src\main.d .\..\Core\Src\main.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\Core\Src\main.c", line 166: Error:  #169: expected a declaration
+  }
+  ^
+".\..\Core\Src\main.c", line 195: Warning:  #12-D: parsing restarts here after previous syntax error
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                                                                        ^
+".\..\Core\Src\main.c", line 196: Error:  #77-D: this declaration has no storage class or type specifier
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    ^
+".\..\Core\Src\main.c", line 196: Error:  #65: expected a ";"
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+                     ^
+".\..\Core\Src\main.c", line 197: Error:  #77-D: this declaration has no storage class or type specifier
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    ^
+".\..\Core\Src\main.c", line 197: Error:  #65: expected a ";"
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+                     ^
+".\..\Core\Src\main.c", line 198: Error:  #77-D: this declaration has no storage class or type specifier
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+    ^
+".\..\Core\Src\main.c", line 198: Error:  #65: expected a ";"
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+                     ^
+".\..\Core\Src\main.c", line 199: Error:  #77-D: this declaration has no storage class or type specifier
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+    ^
+".\..\Core\Src\main.c", line 199: Error:  #65: expected a ";"
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+                     ^
+".\..\Core\Src\main.c", line 201: Error:  #169: expected a declaration
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+    ^
+".\..\Core\Src\main.c", line 241: Warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+.\..\Core\Src\main.c: 2 warnings, 10 errors
+
+[2023-11-26 19:35:55]	[done]
+	build successfully !
+

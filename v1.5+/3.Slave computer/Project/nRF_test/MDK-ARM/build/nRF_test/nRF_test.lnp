@@ -1,4 +1,4 @@
---cpu Cortex-M3 --library_type=microlib --scatter "d:/Users/Centaur1/Desktop/22/nRF_test/MDK-ARM/build/nRF_test/nRF_test.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
+--cpu Cortex-M3 --library_type=microlib --scatter "d:/tt_Programs_Files/Project/noise/v1.5+/3.Slave computer/Project/nRF_test/MDK-ARM/build/nRF_test/nRF_test.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
 --list .\build\nRF_test\nRF_test.map
 .\build\nRF_test\__\Core\Src\dma.o
 .\build\nRF_test\__\Core\Src\gpio.o

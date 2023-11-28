@@ -41,10 +41,8 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-// uint8_t txdata[33]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,
-//										19,20,21,22,23,24,25,26,27,28,29,30,31,32};
-uint8_t txdata[32] = {5, 'A', 'B', 'C', 'D', 'E', 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                      19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+uint8_t txdata[32] = {31, 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
+                      'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
 uint8_t rxdata[32];
 
 /* USER CODE END PM */
@@ -100,6 +98,7 @@ int main(void)
     /* USER CODE BEGIN 2 */
     HAL_GPIO_WritePin(LED_T_GPIO_Port, LED_T_Pin, GPIO_PIN_SET);
     OLED_Init();
+    OLED_ShowString(1, 1, "hello world!");
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -110,24 +109,24 @@ int main(void)
 
         /* USER CODE BEGIN 3 */
         //		while(NRF24L01_Check());
-        //		if(NRF24L01_RxPacket(rxdata)==0)//一旦接收到信息,则显示出来.
+        //		if(NRF24L01_RxPacket(rxdata)==0)//涓?鏃︽帴鏀跺埌淇℃伅,鍒欐樉绀哄嚭鏉?.
         //		{
-        //			rxdata[32]=0;//加入字符串结束符
+        //			rxdata[32]=0;//鍔犲叆瀛楃涓茬粨鏉熺
         //			NRF24L01_TX_Mode();
         //			NRF24L01_TxPacket(txdata);
         //		}
         //		HAL_Delay(500);
         //  }
 
-        //     while (NRF24L01_Check())
-        //         ;
+        while (NRF24L01_Check())
+            ;
         //     OLED_ShowString(1, 1, "initial finish!");
         //     NRF24L01_RX_Mode();
         //     while (1)
         //     {
         //         uint8_t i = 0;
         //         HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-        //         if (NRF24L01_RxPacket(rxdata) == 0) // 一旦接收到信息,则显示出来.
+        //         if (NRF24L01_RxPacket(rxdata) == 0) // 涓?鏃︽帴鏀跺埌淇℃伅,鍒欐樉绀哄嚭鏉?.
         //         {
         //             for (i = 1; i <= 16; i++)
         //             {
@@ -155,13 +154,14 @@ int main(void)
             {
                 OLED_Clear();
                 OLED_ShowString(1, 1, "Sended fail!");
-            };
+            }
             HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
             HAL_Delay(500);
-        };
+        }
     }
+
+    /* USER CODE END 3 */
 }
-/* USER CODE END 3 */
 
 /**
  * @brief System Clock Configuration

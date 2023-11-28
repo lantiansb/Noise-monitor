@@ -24,6 +24,19 @@
                 "interface/cmsis-dap.cfg",
                 "target/stm32f1x.cfg"
             ]
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "stlink",
+            "servertype": "openocd",
+            "executable": "build\\nRF_test\\nRF_test.elf",
+            "runToEntryPoint": "main",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/<target-name>.cfg"
+            ]
         }
     ]
 }
