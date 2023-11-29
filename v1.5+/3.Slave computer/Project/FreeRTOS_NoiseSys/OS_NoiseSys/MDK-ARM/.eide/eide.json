@@ -144,10 +144,16 @@
         "name": "Hardware",
         "files": [
           {
+            "path": "../Hardware/24l01.c"
+          },
+          {
             "path": "../Hardware/noisen.c"
           },
           {
             "path": "../Hardware/OLED.c"
+          },
+          {
+            "path": "../Hardware/W25Q128.c"
           }
         ],
         "folders": []

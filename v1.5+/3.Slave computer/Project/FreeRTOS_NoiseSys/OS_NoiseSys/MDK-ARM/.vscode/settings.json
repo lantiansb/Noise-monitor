@@ -1,1 +1,10 @@
-{}
+{
+    "files.associations": {
+        "main.h": "c",
+        "spi.h": "c",
+        "usart.h": "c",
+        "gpio.h": "c",
+        "dma.h": "c",
+        "cmsis_os.h": "c"
+    }
+}
