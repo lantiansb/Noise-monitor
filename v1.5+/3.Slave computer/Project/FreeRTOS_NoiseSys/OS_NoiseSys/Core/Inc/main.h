@@ -31,11 +31,24 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+extern uint32_t FreeRTOSRunTimeTicks; // FreeRTOS Run Time ticks counter
+extern uint32_t TimeStamp; // 世界时间对应的时间戳
+extern uint8_t NRF24L01_rxdata[32];
 
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+/**
+ * @brief 北京时间结构体
+ * 
+ */
+typedef struct
+{
+    uint8_t hour;
+    uint8_t minute;
+    uint8_t second;
+} TimeStruct;
 
 /* USER CODE END ET */
 
@@ -46,7 +59,9 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+#ifndef RETURN_ERROR
+    #define RETURN_ERROR 0xFFFFFFFF
+#endif // !RETURN_ERROR
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

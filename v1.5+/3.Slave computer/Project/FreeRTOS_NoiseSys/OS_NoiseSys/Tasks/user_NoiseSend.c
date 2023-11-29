@@ -11,5 +11,4 @@ void NoiseSend(void *argument)
     {
         osDelay(1);
     }
-    
 }

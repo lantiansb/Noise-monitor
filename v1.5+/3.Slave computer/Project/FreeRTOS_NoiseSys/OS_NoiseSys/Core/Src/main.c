@@ -29,6 +29,17 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+/* standard library */
+#include "stdio.h"
+#include "string.h"
+#include "stdlib.h"
+/* hardware driver */
+#include "usart.h"
+#include "OLED.h"
+#include "24l01.h"
+#include "W25Q128.h"
+#include "noisen.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,7 +110,7 @@ int main(void)
     MX_SPI1_Init();
     MX_SPI2_Init();
     /* USER CODE BEGIN 2 */
-
+    
     /* USER CODE END 2 */
 
     /* Init scheduler */
@@ -115,7 +126,8 @@ int main(void)
     while (1)
     {
         /* USER CODE END WHILE */
-
+        HAL_UART_Transmit(&huart1, (uint8_t *)"OS ERROR!", sizeof("OS ERROR!"), 100); // it's abnormal to get here
+        HAL_Delay(1000);
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */

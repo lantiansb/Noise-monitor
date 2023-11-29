@@ -284,6 +284,22 @@ void OLED_ShowBinNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Leng
 }
 
 /**
+ * @brief 屏幕显示当前北京时间
+ * 
+ * @param time 北京时间结构体
+ * @param Line 显示行数
+ */
+void OLED_TimeShow(TimeStruct time, uint8_t Line)
+{
+    OLED_ShowNum(Line, 1, time.hour, 2);
+    OLED_ShowChar(Line, 3, ':');
+    OLED_ShowNum(Line, 4, time.minute, 2);
+    OLED_ShowChar(Line, 6, ':');
+    OLED_ShowNum(Line, 7, time.second, 2);
+}
+
+
+/**
  * @brief  OLED初始化
  * @param  无
  * @retval 无

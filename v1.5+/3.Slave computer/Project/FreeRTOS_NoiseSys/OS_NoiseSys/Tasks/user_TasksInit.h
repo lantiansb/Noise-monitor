@@ -17,6 +17,7 @@ extern osMessageQueueId_t IdleBreak_MessageQueue;
 extern osMessageQueueId_t BatDet_MessageQueue;
 
 void User_Tasks_Init(void);
+TimeStruct TimeStamp2TimeShow(uint32_t Timestamp);
 
 #ifdef __cplusplus
 }

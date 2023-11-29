@@ -109,7 +109,7 @@ int main(void)
 
         /* USER CODE BEGIN 3 */
         //		while(NRF24L01_Check());
-        //		if(NRF24L01_RxPacket(rxdata)==0)//�?旦接收到信息,则显示出�?.
+        //		if(NRF24L01_RxPacket(rxdata)==0)//�?旦接收到信息,则显示出�?.
         //		{
         //			rxdata[32]=0;//加入字符串结束符
         //			NRF24L01_TX_Mode();
@@ -120,45 +120,45 @@ int main(void)
 
         while (NRF24L01_Check())
             ;
-        //     OLED_ShowString(1, 1, "initial finish!");
-        //     NRF24L01_RX_Mode();
-        //     while (1)
-        //     {
-        //         uint8_t i = 0;
-        //         HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-        //         if (NRF24L01_RxPacket(rxdata) == 0) // �?旦接收到信息,则显示出�?.
-        //         {
-        //             for (i = 1; i <= 16; i++)
-        //             {
-        //                 OLED_ShowChar(2, i, rxdata[i]);
-        //             }
-        //             for (i = 1; i < 16; i++)
-        //             {
-        //                 OLED_ShowChar(3, i, rxdata[i + 16]);
-        //             }
-        //         }
-        //         else
-        //             HAL_Delay(100);
-        //     }
-        // };
+            OLED_ShowString(1, 1, "initial finish!");
+            NRF24L01_RX_Mode();
+            while (1)
+            {
+                uint8_t i = 0;
+                HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
+                if (NRF24L01_RxPacket(rxdata) == 0) // �?旦接收到信息,则显示出�?.
+                {
+                    for (i = 1; i <= 16; i++)
+                    {
+                        OLED_ShowChar(2, i, rxdata[i]);
+                    }
+                    for (i = 1; i < 16; i++)
+                    {
+                        OLED_ShowChar(3, i, rxdata[i + 16]);
+                    }
+                }
+                else
+                    HAL_Delay(100);
+            }
+        };
 
-        NRF24L01_TX_Mode();
-        while (1)
-        {
-            if (NRF24L01_TxPacket(txdata) == TX_OK)
-            {
-                OLED_ShowString(1, 1, "Sended DATA:");
-                OLED_ShowString(2, 1, (char *)txdata);
-            }
-            else
-            {
-                OLED_Clear();
-                OLED_ShowString(1, 1, "Sended fail!");
-            }
-            HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-            HAL_Delay(500);
-        }
-    }
+    //     NRF24L01_TX_Mode();
+    //     while (1)
+    //     {
+    //         if (NRF24L01_TxPacket(txdata) == TX_OK)
+    //         {
+    //             OLED_ShowString(1, 1, "Sended DATA:");
+    //             OLED_ShowString(2, 1, (char *)txdata);
+    //         }
+    //         else
+    //         {
+    //             OLED_Clear();
+    //             OLED_ShowString(1, 1, "Sended fail!");
+    //         }
+    //         HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
+    //         HAL_Delay(500);
+    //     }
+    // }
 
     /* USER CODE END 3 */
 }

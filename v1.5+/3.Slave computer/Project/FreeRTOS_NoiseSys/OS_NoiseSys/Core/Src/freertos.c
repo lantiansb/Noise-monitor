@@ -60,7 +60,6 @@ const osThreadAttr_t defaultTask_attributes = {
 /* USER CODE BEGIN FunctionPrototypes */
 void ConfigureTimerForRunTimeStats(void)
 {
-    extern uint32_t FreeRTOSRunTimeTicks;
     FreeRTOSRunTimeTicks = 0;
 }
 /* USER CODE END FunctionPrototypes */

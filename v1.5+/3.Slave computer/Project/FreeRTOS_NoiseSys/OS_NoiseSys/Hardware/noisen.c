@@ -1,4 +1,4 @@
-#include "stm32f1xx_hal.h"
+#include "main.h"
 #include "noisen.h" // Noise sensor header
 #include "cmsis_os.h"
 #include "OLED.h"
@@ -20,4 +20,5 @@ uint32_t get_noise(void)
         noise = (usart2_rec_buf[3] * 16 * 16 + usart2_rec_buf[4]);
         return noise; // return noise
     }
+    return RETURN_ERROR;
 }
