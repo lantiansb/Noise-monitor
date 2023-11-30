@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.h
+ * @brief          : Header for main.c file.
+ *                   This file contains the common defines of the application.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -23,32 +23,34 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-extern uint32_t FreeRTOSRunTimeTicks; // FreeRTOS Run Time ticks counter
-extern uint32_t TimeStamp; // 世界时间对应的时间戳
-extern uint8_t NRF24L01_rxdata[32];
+    /* Private includes ----------------------------------------------------------*/
+    /* USER CODE BEGIN Includes */
+    extern uint32_t FreeRTOSRunTimeTicks; // FreeRTOS Run Time ticks counter
+    extern uint32_t TimeStamp;            // 世界时间对应的时间戳
+    extern uint8_t NRF24L01_rxdata[32];
+    extern const int8_t NRF24L01_REC_ERROR; // NRF24L01 未接受到数据
 
-/* USER CODE END Includes */
+    /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
-/**
- * @brief 北京时间结构体
- * 
- */
-typedef struct
-{
-    uint8_t hour;
-    uint8_t minute;
-    uint8_t second;
-} TimeStruct;
+    /* Exported types ------------------------------------------------------------*/
+    /* USER CODE BEGIN ET */
+    /**
+     * @brief 北京时间结构体
+     *
+     */
+    typedef struct
+    {
+        uint8_t hour;
+        uint8_t minute;
+        uint8_t second;
+    } TimeStruct;
 
 /* USER CODE END ET */
 
@@ -59,13 +61,14 @@ typedef struct
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+#define MACHIN_NUM 1 // 1号机
 #ifndef RETURN_ERROR
-    #define RETURN_ERROR 0xFFFFFFFF
+#define RETURN_ERROR 0xFFFFFFFF
 #endif // !RETURN_ERROR
-/* USER CODE END EM */
+    /* USER CODE END EM */
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+    /* Exported functions prototypes ---------------------------------------------*/
+    void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -87,9 +90,9 @@ void Error_Handler(void);
 #define KEY2_Pin GPIO_PIN_12
 #define KEY2_GPIO_Port GPIOA
 
-/* USER CODE BEGIN Private defines */
+    /* USER CODE BEGIN Private defines */
 
-/* USER CODE END Private defines */
+    /* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }

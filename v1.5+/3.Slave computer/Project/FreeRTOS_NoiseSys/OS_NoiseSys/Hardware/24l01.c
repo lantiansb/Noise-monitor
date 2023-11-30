@@ -4,6 +4,7 @@
 
 const uint8_t TX_ADDRESS[TX_ADR_WIDTH] = {0x34, 0x43, 0x10, 0x10, 0x01}; // 发送地址
 const uint8_t RX_ADDRESS[RX_ADR_WIDTH] = {0x34, 0x43, 0x10, 0x10, 0x01}; // 发送地址
+const int8_t NRF24L01_REC_ERROR = -1;
 
 uint32_t TimeStamp = 0xFFFFFFFF; // 为满值即未获取成功
 uint8_t NRF24L01_rxdata[32];     // RX data for NRF24L01
@@ -173,7 +174,7 @@ int8_t NRF24L01_WatingTimeGet(void)
     {
         if (!NRF24L01_RxPacket(NRF24L01_rxdata))
         {
-            TimeStamp = NRF24L01_rxdata[1] << 24 | NRF24L01_rxdata[2] << 16 | NRF24L01_rxdata[3] << 8 | NRF24L01_rxdata[4];
+            TimeStamp = NRF24L01_rxdata[2] << 16 | NRF24L01_rxdata[3] << 8 | NRF24L01_rxdata[4];
             return HAL_OK;
         }
         else

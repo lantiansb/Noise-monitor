@@ -63,7 +63,7 @@ uint8_t W25QXX_ReadSR(uint8_t regno)
     // Poll mode
     // 发送指令和接收简单数据推荐使用查询模式
     HAL_SPI_TransmitReceive(&SPIx, cmd, temp, 2, 10); // 发送读状态寄存器命令
-    W25Q128_CS_1;                                      // 取消片选
+    W25Q128_CS_1;                                     // 取消片选
     return temp[1];
 }
 
@@ -91,7 +91,7 @@ void W25QXX_Write_SR(uint8_t regno, uint8_t sr)
     // Poll mode
     // 发送指令和接收简单数据推荐使用查询模式
     HAL_SPI_Transmit(&SPIx, cmd, 2, 10); // 发送读状态寄存器命令
-    W25Q128_CS_1;                         // 取消片选
+    W25Q128_CS_1;                        // 取消片选
 }
 
 // W25QXX写使能
@@ -99,18 +99,18 @@ void W25QXX_Write_SR(uint8_t regno, uint8_t sr)
 void W25QXX_Write_Enable(void)
 {
     uint8_t cmd = W25X_WriteEnable;
-    W25Q128_CS_0;                          // 使能器件
+    W25Q128_CS_0;                         // 使能器件
     HAL_SPI_Transmit(&SPIx, &cmd, 1, 10); // 发送写使能
-    W25Q128_CS_1;                          // 取消片选
+    W25Q128_CS_1;                         // 取消片选
 }
 // W25QXX写禁止
 // 将WEL清零
 void W25QXX_Write_Disable(void)
 {
     uint8_t cmd = W25X_WriteDisable;
-    W25Q128_CS_0;                          // 使能器件
+    W25Q128_CS_0;                         // 使能器件
     HAL_SPI_Transmit(&SPIx, &cmd, 1, 10); // 发送写禁止指令
-    W25Q128_CS_1;                          // 取消片选
+    W25Q128_CS_1;                         // 取消片选
 }
 
 // 等待空闲
@@ -123,19 +123,19 @@ void W25QXX_Wait_Busy(void)
 void W25QXX_PowerDown(void)
 {
     uint8_t cmd = W25X_PowerDown;
-    W25Q128_CS_0;                          // 使能器件
+    W25Q128_CS_0;                         // 使能器件
     HAL_SPI_Transmit(&SPIx, &cmd, 1, 10); // 发送掉电命令
-    W25Q128_CS_1;                          // 取消片选
-    HAL_Delay(1);                          // 等待TPD
+    W25Q128_CS_1;                         // 取消片选
+    HAL_Delay(1);                         // 等待TPD
 }
 // 唤醒
 void W25QXX_WAKEUP(void)
 {
     uint8_t cmd = W25X_ReleasePowerDown;
-    W25Q128_CS_0;                          // 使能器件
+    W25Q128_CS_0;                         // 使能器件
     HAL_SPI_Transmit(&SPIx, &cmd, 1, 10); //  send W25X_PowerDown command 0xAB
-    W25Q128_CS_1;                          // 取消片选
-    HAL_Delay(1);                          // 等待TRES1
+    W25Q128_CS_1;                         // 取消片选
+    HAL_Delay(1);                         // 等待TRES1
 }
 
 // 读取芯片ID
@@ -178,9 +178,9 @@ void W25QXX_Read(uint8_t *pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead)
     cmd[3] = (uint8_t)((ReadAddr) >> 8);
     cmd[4] = (uint8_t)(ReadAddr);
 
-    W25Q128_CS_0;                         // 使能器件
+    W25Q128_CS_0;                        // 使能器件
     HAL_SPI_Transmit(&SPIx, cmd, 1, 10); // 发送读取命令
-    if (W25QXX_TYPE == W25Q256)           // 如果是W25Q128/256的话地址为4字节的，要发送最高8位
+    if (W25QXX_TYPE == W25Q256)          // 如果是W25Q128/256的话地址为4字节的，要发送最高8位
     {
         HAL_SPI_TransmitReceive(&SPIx, &cmd[1], ptr, 4 + NumByteToRead, 10 * NumByteToRead); // 发送32bit地址
     }
@@ -206,9 +206,9 @@ void W25QXX_Read_DMA(uint8_t *pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead
     cmd[3] = (uint8_t)((ReadAddr) >> 8);
     cmd[4] = (uint8_t)(ReadAddr);
 
-    W25Q128_CS_0;                         // 使能器件
+    W25Q128_CS_0;                        // 使能器件
     HAL_SPI_Transmit(&SPIx, cmd, 1, 10); // 发送读取命令
-    if (W25QXX_TYPE == W25Q256)           // 如果是W25Q128/256的话地址为4字节的，要发送最高8位
+    if (W25QXX_TYPE == W25Q256)          // 如果是W25Q128/256的话地址为4字节的，要发送最高8位
     {
         HAL_SPI_TransmitReceive_DMA(&SPIx, &cmd[1], ptr, 4 + NumByteToRead); // 发送32bit地址
     }
@@ -235,9 +235,9 @@ void W25QXX_Write_Page(uint8_t *pBuffer, uint32_t WriteAddr, uint16_t NumByteToW
 
     W25QXX_Write_Enable(); // SET WEL
     W25QXX_Wait_Busy();
-    W25Q128_CS_0;                         // 使能器件
+    W25Q128_CS_0;                        // 使能器件
     HAL_SPI_Transmit(&SPIx, cmd, 1, 10); // 发送写页命令
-    if (W25QXX_TYPE == W25Q256)           // 如果是W25Q256的话地址为4字节的，要发送最高8位
+    if (W25QXX_TYPE == W25Q256)          // 如果是W25Q256的话地址为4字节的，要发送最高8位
     {
         HAL_SPI_Transmit(&SPIx, &cmd[1], 4, 1000); // 发送32bit地址
     }
@@ -350,11 +350,12 @@ void W25QXX_Erase_Chip(void)
     uint8_t cmd = W25X_ChipErase;
     W25QXX_Write_Enable(); // SET WEL
     W25QXX_Wait_Busy();
-    W25Q128_CS_0;                            // 使能器件
+    W25Q128_CS_0;                           // 使能器件
     HAL_SPI_Transmit(&SPIx, &cmd, 1, 1000); // 发送片擦除命令
-    W25Q128_CS_1;                            // 取消片选
-    //	W25QXX_Wait_Busy();   				   //等待芯片擦除结束
+    W25Q128_CS_1;                           // 取消片选
+    W25QXX_Wait_Busy();   				   //等待芯片擦除结束
 }
+
 // 擦除一个扇区
 // Dst_Addr:扇区地址 根据实际容量设置
 // 擦除一个扇区的最少时间:45ms - 400ms
@@ -371,9 +372,9 @@ void W25QXX_Erase_Sector(uint32_t Dst_Addr)
 
     W25QXX_Write_Enable(); // SET WEL
     W25QXX_Wait_Busy();
-    W25Q128_CS_0;                         // 使能器件
+    W25Q128_CS_0;                        // 使能器件
     HAL_SPI_Transmit(&SPIx, cmd, 1, 10); // 发送扇区擦除指令
-    if (W25QXX_TYPE == W25Q256)           // 如果是W25Q256的话地址为4字节的，要发送最高8位
+    if (W25QXX_TYPE == W25Q256)          // 如果是W25Q256的话地址为4字节的，要发送最高8位
     {
         HAL_SPI_Transmit(&SPIx, &cmd[1], 4, 4000); // 发送32bit地址
     }
@@ -402,9 +403,9 @@ void W25QXX_Erase_Block(uint32_t Dst_Addr)
 
     W25QXX_Write_Enable(); // SET WEL
     W25QXX_Wait_Busy();
-    W25Q128_CS_0;                         // 使能器件
+    W25Q128_CS_0;                        // 使能器件
     HAL_SPI_Transmit(&SPIx, cmd, 1, 10); // 发送扇区擦除指令
-    if (W25QXX_TYPE == W25Q256)           // 如果是W25Q256的话地址为4字节的，要发送最高8位
+    if (W25QXX_TYPE == W25Q256)          // 如果是W25Q256的话地址为4字节的，要发送最高8位
     {
         HAL_SPI_Transmit(&SPIx, &cmd[1], 4, 2000); // 发送32bit地址
     }

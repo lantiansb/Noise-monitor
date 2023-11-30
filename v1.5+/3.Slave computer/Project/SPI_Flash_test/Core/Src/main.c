@@ -100,16 +100,16 @@ int main(void)
     OLED_ShowString(1, 1, "OLED ini finish!");
     while (W25QXX_Init() == RESET)
         ;
-    W25QXX_Erase_Sector(0);
+    W25QXX_Erase_Sector(NumBlockOfChip * NumSectorOfBlock - 1); // 擦除所用到的扇区
     OLED_ShowString(2, 1, "FLASH finish!");
     sprintf((char *)W25_buf, "ID: %d", W25QXX_ReadID());
-    W25QXX_Write(W25_buf, 0x000000, sizeof(W25_buf));
+    W25QXX_Write_NoCheck(W25_buf, FLASH_SIZE - NumByteOfPage * 1 - 1, sizeof(W25_buf));
     OLED_ShowString(3, 1, (char *)W25_buf);
 
     OLED_Clear();
     HAL_Delay(1000);
     memset((char *)W25_buf, 0, sizeof(W25_buf));
-    W25QXX_Read(W25_buf, 0x000000, 64);
+    W25QXX_Read(W25_buf, FLASH_SIZE - NumByteOfPage * 1 - 1, 64);
     OLED_ShowString(3, 1, (char *)W25_buf);
 
     /* USER CODE END 2 */
