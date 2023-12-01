@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "user_TasksInit.h"
 #include "dma.h"
 #include "i2c.h"
 #include "spi.h"
@@ -39,6 +38,7 @@
 #include "24l01.h"
 #include "W25Q128.h"
 #include "noisen.h"
+#include "user_TasksInit.h"
 
 /* USER CODE END Includes */
 
@@ -88,7 +88,7 @@ int main(void)
     /* MCU Configuration--------------------------------------------------------*/
 
     /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-        HAL_Init();
+    HAL_Init();
 
     /* USER CODE BEGIN Init */
 
@@ -110,13 +110,13 @@ int main(void)
     MX_SPI1_Init();
     MX_SPI2_Init();
     /* USER CODE BEGIN 2 */
-    
+
     /* USER CODE END 2 */
 
     /* Init scheduler */
     osKernelInitialize(); /* Call init function for freertos objects (in freertos.c) */
-    User_Tasks_Init();
     MX_FREERTOS_Init();
+    User_Tasks_Init();
     /* Start scheduler */
     osKernelStart();
 
@@ -126,8 +126,7 @@ int main(void)
     while (1)
     {
         /* USER CODE END WHILE */
-        HAL_UART_Transmit(&huart1, (uint8_t *)"OS ERROR!", sizeof("OS ERROR!"), 100); // it's abnormal to get here
-        HAL_Delay(1000);
+
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
@@ -191,7 +190,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     if (htim->Instance == TIM4)
     {
         HAL_IncTick();
-        FreeRTOSRunTimeTicks += 1;
     }
     /* USER CODE BEGIN Callback 1 */
 

@@ -92,7 +92,8 @@ void TimeSync(void)
     W25QXX_Read((uint8_t *)(&SysBootTimes), FLASH_SIZE - NumByteOfPage * 2 - 1, sizeof(SysBootTimes));          // 倒数第二页第一个字节存放开机次数
     SysBootTimes = SysBootTimes << 1;                                                                           // 由于外部FLASH不可写1，所以用左移代替计数，11111111 << 1 -> 11111110，表示已启动1次
     W25QXX_Write_NoCheck((uint8_t *)(&SysBootTimes), FLASH_SIZE - NumByteOfPage * 2 - 1, sizeof(SysBootTimes)); // 开机次数存入FLASH
-    SysBootTimes = (uint8_t)log2((double)(~SysBootTimes)) + 1; // 取反后再取对数，表明有几位已用，例：~11111110 = 00000001,此时为2的0次方，表示历史启动0次
+    SysBootTimes = ~SysBootTimes;
+    SysBootTimes = (uint8_t)log2((double)SysBootTimes) + 1; // 取反后再取对数，表明有几位已用，例：~11111110 = 00000001,此时为2的0次方，表示历史启动0次
     OLED_Clear();
     W25QXX_Write_NoCheck((uint8_t *)(&TimeStamp), FLASH_SIZE - NumByteOfPage * 1 + SysBootTimes * 12, sizeof(TimeStamp)); // 写入首地址进外部flash
     uint8_t i = ~SysBootTimes;

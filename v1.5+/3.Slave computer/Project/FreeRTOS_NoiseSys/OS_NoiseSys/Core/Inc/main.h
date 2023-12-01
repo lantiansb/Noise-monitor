@@ -23,26 +23,25 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 
-    /* Private includes ----------------------------------------------------------*/
-    /* USER CODE BEGIN Includes */
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
     extern uint32_t FreeRTOSRunTimeTicks; // FreeRTOS Run Time ticks counter
     extern uint32_t TimeStamp;            // 世界时间对应的时间戳
     extern uint8_t NRF24L01_rxdata[32];
     extern const int8_t NRF24L01_REC_ERROR; // NRF24L01 未接受到数据
 
-    /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-    /* Exported types ------------------------------------------------------------*/
-    /* USER CODE BEGIN ET */
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
     /**
-     * @brief 北京时间结构体
+     * @brief 北京时间结构�?
      *
      */
     typedef struct
@@ -65,10 +64,10 @@ extern "C"
 #ifndef RETURN_ERROR
 #define RETURN_ERROR 0xFFFFFFFF
 #endif // !RETURN_ERROR
-    /* USER CODE END EM */
+/* USER CODE END EM */
 
-    /* Exported functions prototypes ---------------------------------------------*/
-    void Error_Handler(void);
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -83,16 +82,16 @@ extern "C"
 #define nRF24_IRQ_GPIO_Port GPIOB
 #define NSS2_Pin GPIO_PIN_12
 #define NSS2_GPIO_Port GPIOB
-#define CE_Pin GPIO_PIN_8
-#define CE_GPIO_Port GPIOA
 #define KEY1_Pin GPIO_PIN_11
 #define KEY1_GPIO_Port GPIOA
 #define KEY2_Pin GPIO_PIN_12
 #define KEY2_GPIO_Port GPIOA
+#define CE_Pin GPIO_PIN_8
+#define CE_GPIO_Port GPIOB
 
-    /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
 
-    /* USER CODE END Private defines */
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
