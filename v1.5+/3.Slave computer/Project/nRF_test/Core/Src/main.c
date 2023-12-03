@@ -42,7 +42,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 uint8_t txdata[32] = {31, 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B',
-                      'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
+                      'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 0x0D, 0x0A};
 uint8_t rxdata[32];
 
 /* USER CODE END PM */
@@ -96,7 +96,6 @@ int main(void)
     MX_SPI1_Init();
     MX_I2C1_Init();
     /* USER CODE BEGIN 2 */
-    HAL_GPIO_WritePin(LED_T_GPIO_Port, LED_T_Pin, GPIO_PIN_SET);
     OLED_Init();
     OLED_ShowString(1, 1, "hello world!");
     /* USER CODE END 2 */
@@ -108,8 +107,11 @@ int main(void)
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
-        //		while(NRF24L01_Check());
-        //		if(NRF24L01_RxPacket(rxdata)==0)//�?旦接收到信息,则显示出�?.
+        HAL_Delay(5000);
+        HAL_GPIO_WritePin(LED_T_GPIO_Port, LED_T_Pin, GPIO_PIN_SET);
+        while (NRF24L01_Check())
+            ;
+        //		if(NRF24L01_RxPacket(rxdata)==0)//�??旦接收到信息,则显示出�??.
         //		{
         //			rxdata[32]=0;//加入字符串结束符
         //			NRF24L01_TX_Mode();
@@ -118,47 +120,48 @@ int main(void)
         //		HAL_Delay(500);
         //  }
 
-        while (NRF24L01_Check())
-            ;
-            OLED_ShowString(1, 1, "initial finish!");
-            NRF24L01_RX_Mode();
-            while (1)
-            {
-                uint8_t i = 0;
-                HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-                if (NRF24L01_RxPacket(rxdata) == 0) // �?旦接收到信息,则显示出�?.
-                {
-                    for (i = 1; i <= 16; i++)
-                    {
-                        OLED_ShowChar(2, i, rxdata[i]);
-                    }
-                    for (i = 1; i < 16; i++)
-                    {
-                        OLED_ShowChar(3, i, rxdata[i + 16]);
-                    }
-                }
-                else
-                    HAL_Delay(100);
-            }
-        };
+        //        while (NRF24L01_Check())
+        //            ;
+        //            OLED_ShowString(1, 1, "initial finish!");
+        //            NRF24L01_RX_Mode();
+        //            while (1)
+        //            {
+        //                uint8_t i = 0;
+        //                HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
+        //                if (NRF24L01_RxPacket(rxdata) == 0) // �??旦接收到信息,则显示出�??.
+        //                {
+        //                    for (i = 1; i <= 16; i++)
+        //                    {
+        //                        OLED_ShowChar(2, i, rxdata[i]);
+        //                    }
+        //                    for (i = 1; i < 16; i++)
+        //                    {
+        //                        OLED_ShowChar(3, i, rxdata[i + 16]);
+        //                    }
+        //                }
+        //                else
+        //                    HAL_Delay(100);
+        //            }
+        //        };
 
-    //     NRF24L01_TX_Mode();
-    //     while (1)
-    //     {
-    //         if (NRF24L01_TxPacket(txdata) == TX_OK)
-    //         {
-    //             OLED_ShowString(1, 1, "Sended DATA:");
-    //             OLED_ShowString(2, 1, (char *)txdata);
-    //         }
-    //         else
-    //         {
-    //             OLED_Clear();
-    //             OLED_ShowString(1, 1, "Sended fail!");
-    //         }
-    //         HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-    //         HAL_Delay(500);
-    //     }
-    // }
+        NRF24L01_TX_Mode();
+        // HAL_Delay(1000);
+        while (1)
+        {
+            if (NRF24L01_TxPacket(txdata) == TX_OK)
+            {
+                // OLED_ShowString(1, 1, "Sended DATA:");
+                // OLED_ShowString(2, 1, (char *)txdata);
+            }
+            else
+            {
+                // OLED_Clear();
+                // OLED_ShowString(1, 1, "Sended fail!");
+            }
+            HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
+            HAL_Delay(10);
+        }
+    }
 
     /* USER CODE END 3 */
 }

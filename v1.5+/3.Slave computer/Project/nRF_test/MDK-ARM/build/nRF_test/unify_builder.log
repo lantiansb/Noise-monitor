@@ -164,3 +164,122 @@ command:
 [2023-11-29 18:43:22]	[done]
 	build successfully !
 
+[2023-12-01 14:14:51]	[done]
+	build successfully !
+
+[2023-12-01 14:26:02]	[done]
+	build successfully !
+
+[2023-12-01 15:04:56]	[done]
+	build successfully !
+
+[2023-12-01 15:06:18]	[done]
+	build successfully !
+
+[2023-12-01 15:07:28]	[done]
+	build successfully !
+
+[2023-12-01 15:08:01]	[done]
+	build successfully !
+
+[2023-12-01 15:09:48]	[done]
+	build successfully !
+
+[2023-12-01 15:21:58]	[done]
+	build successfully !
+
+[2023-12-01 15:32:36]	[done]
+	build successfully !
+
+[2023-12-01 19:52:03]	[done]
+	build successfully !
+
+[2023-12-01 19:56:14]	[done]
+	build successfully !
+
+[2023-12-01 19:56:35]	[done]
+	build successfully !
+
+[2023-12-01 19:57:11]	[done]
+	build successfully !
+
+[2023-12-01 19:57:59]	[done]
+	build successfully !
+
+[2023-12-01 19:59:16]	[done]
+	build successfully !
+
+[2023-12-01 20:00:27]	[done]
+	build successfully !
+
+[2023-12-01 20:01:24]	compilation failed at : "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\nRF_test\Core\Src\main.c", exit code: 1
+command: 
+  "D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Hardware -I.cmsis/include -IRTE/_nRF_test -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F103xB --cpu Cortex-M3 --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\nRF_test\__\Core\Src\main.o --no_depend_system_headers --depend .\build\nRF_test\__\Core\Src\main.d .\..\Core\Src\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\Core\Src\main.c", line 45: Error:  #253: expected a ","
+                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 0D, 0A};
+                                                                                     ^
+".\..\Core\Src\main.c", line 45: Error:  #253: expected a ","
+                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 0D, 0A};
+                                                                                         ^
+.\..\Core\Src\main.c: 0 warnings, 2 errors
+
+[2023-12-01 20:01:36]	compilation failed at : "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\nRF_test\Core\Src\main.c", exit code: 1
+command: 
+  "D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Hardware -I.cmsis/include -IRTE/_nRF_test -I.eide/deps -DUSE_HAL_DRIVER -DSTM32F103xB --cpu Cortex-M3 --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\nRF_test\__\Core\Src\main.o --no_depend_system_headers --depend .\build\nRF_test\__\Core\Src\main.d .\..\Core\Src\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\Core\Src\main.c", line 45: Error:  #253: expected a ","
+                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 0D, 0A};
+                                                                                     ^
+".\..\Core\Src\main.c", line 45: Error:  #253: expected a ","
+                        'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 0D, 0A};
+                                                                                         ^
+.\..\Core\Src\main.c: 0 warnings, 2 errors
+
+[2023-12-01 20:01:57]	[done]
+	build successfully !
+
+[2023-12-01 20:02:19]	[done]
+	build successfully !
+
+[2023-12-01 20:04:44]	[done]
+	build successfully !
+
+[2023-12-01 20:53:07]	[done]
+	build successfully !
+
+[2023-12-01 20:56:46]	[done]
+	build successfully !
+
+[2023-12-01 20:57:34]	[done]
+	build successfully !
+
+[2023-12-01 20:59:34]	[done]
+	build successfully !
+
+[2023-12-01 21:00:52]	[done]
+	build successfully !
+
+[2023-12-01 21:01:56]	[done]
+	build successfully !
+
+[2023-12-01 21:03:01]	[done]
+	build successfully !
+
+[2023-12-01 21:04:26]	[done]
+	build successfully !
+
+[2023-12-01 21:05:14]	[done]
+	build successfully !
+
+[2023-12-01 21:15:01]	[done]
+	build successfully !
+
+[2023-12-01 21:16:27]	[done]
+	build successfully !
+
+[2023-12-01 21:19:16]	[done]
+	build successfully !
+
