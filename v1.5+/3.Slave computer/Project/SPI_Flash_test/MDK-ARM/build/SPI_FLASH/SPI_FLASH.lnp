@@ -1,0 +1,29 @@
+--cpu Cortex-M3 --library_type=microlib --scatter "d:/tt_Programs_Files/Project/noise/v1.5+/3.Slave computer/Project/SPI_Flash_test/MDK-ARM/build/SPI_FLASH/SPI_FLASH.sct" --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
+--list .\build\SPI_FLASH\SPI_FLASH.map
+.\build\SPI_FLASH\__\Core\Src\gpio.o
+.\build\SPI_FLASH\__\Core\Src\i2c.o
+.\build\SPI_FLASH\__\Core\Src\main.o
+.\build\SPI_FLASH\__\Core\Src\spi.o
+.\build\SPI_FLASH\__\Core\Src\stm32f1xx_hal_msp.o
+.\build\SPI_FLASH\__\Core\Src\stm32f1xx_it.o
+.\build\SPI_FLASH\__\Core\Src\system_stm32f1xx.o
+.\build\SPI_FLASH\__\Core\Src\usart.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.o
+.\build\SPI_FLASH\__\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.o
+.\build\SPI_FLASH\__\Hardware\OLED.o
+.\build\SPI_FLASH\__\Hardware\W25Q128.o
+.\build\SPI_FLASH\startup_stm32f103xb.o -o .\build\SPI_FLASH\SPI_FLASH.axf

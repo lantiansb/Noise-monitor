@@ -1,0 +1,4 @@
+arm-none-eabi-objcopy --update-section ER_IROM1="d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\SPI_Flash_test\MDK-ARM\build\SPI_FLASH\SPI_FLASH.bin" "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\SPI_Flash_test\MDK-ARM\build\SPI_FLASH\SPI_FLASH.axf" "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\SPI_Flash_test\MDK-ARM\build\SPI_FLASH\SPI_FLASH.elf"
+
+arm-none-eabi-objcopy: d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\SPI_Flash_test\MDK-ARM\build\SPI_FLASH\SPI_FLASH.elf: warning: allocated section `RW_IRAM1' not in segment
+

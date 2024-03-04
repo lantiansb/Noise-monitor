@@ -1,0 +1,49 @@
+[2023-11-28 15:20:32]	[done]
+	build successfully !
+
+[2023-11-28 15:21:30]	[done]
+	build successfully !
+
+[2023-11-28 20:26:31]	[done]
+	build successfully !
+
+[2023-11-28 20:27:03]	[done]
+	build successfully !
+
+[2023-11-28 20:28:32]	[done]
+	build successfully !
+
+[2023-11-28 20:37:08]	[done]
+	build successfully !
+
+[2023-11-28 20:39:32]	[done]
+	build successfully !
+
+[2023-11-28 20:39:42]	[done]
+	build successfully !
+
+[2023-11-30 09:26:28]	[done]
+	build successfully !
+
+[2023-11-30 09:27:09]	[done]
+	build successfully !
+
+[2023-11-30 09:29:56]	compilation failed at : "d:\tt_Programs_Files\Project\noise\v1.5+\3.Slave computer\Project\SPI_Flash_test\Core\Src\main.c", exit code: 1
+command: 
+  "D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I.cmsis/include -IRTE/_SPI_FLASH -I.eide/deps -I../Hardware -DUSE_HAL_DRIVER -DSTM32F103xB -DSTM32F10X_MD --cpu Cortex-M3 --li --c99 -D__MICROLIB -O3 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\SPI_FLASH\__\Core\Src\main.o --no_depend_system_headers --depend .\build\SPI_FLASH\__\Core\Src\main.d .\..\Core\Src\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\..\Core\Src\main.c", line 106: Error:  #20: identifier "NFLASH_SIZE" is undefined
+      W25QXX_Write_NoCheck(W25_buf, - NFLASH_SIZE umByteOfPage * 1 - 1, sizeof(W25_buf));
+                                      ^
+".\..\Core\Src\main.c", line 106: Error:  #165: too few arguments in function call
+      W25QXX_Write_NoCheck(W25_buf, - NFLASH_SIZE umByteOfPage * 1 - 1, sizeof(W25_buf));
+                                                  ^
+".\..\Core\Src\main.c", line 106: Error:  #18: expected a ")"
+      W25QXX_Write_NoCheck(W25_buf, - NFLASH_SIZE umByteOfPage * 1 - 1, sizeof(W25_buf));
+                                                  ^
+.\..\Core\Src\main.c: 0 warnings, 3 errors
+
+[2023-11-30 09:30:17]	[done]
+	build successfully !
+
