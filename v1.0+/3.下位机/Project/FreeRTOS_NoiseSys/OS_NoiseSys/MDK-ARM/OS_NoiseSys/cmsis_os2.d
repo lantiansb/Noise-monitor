@@ -1,8 +1,8 @@
 os_noisesys\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-os_noisesys\cmsis_os2.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+os_noisesys\cmsis_os2.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 os_noisesys\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-os_noisesys\cmsis_os2.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-os_noisesys\cmsis_os2.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+os_noisesys\cmsis_os2.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+os_noisesys\cmsis_os2.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 os_noisesys\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 os_noisesys\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 os_noisesys\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

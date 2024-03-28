@@ -1,7 +1,7 @@
 os_noisesys\freertos.o: ../Core/Src/freertos.c
 os_noisesys\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-os_noisesys\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-os_noisesys\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+os_noisesys\freertos.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+os_noisesys\freertos.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 os_noisesys\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 os_noisesys\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 os_noisesys\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -39,4 +39,7 @@ os_noisesys\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex
 os_noisesys\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 os_noisesys\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 os_noisesys\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+os_noisesys\freertos.o: ../System/delay.h
+os_noisesys\freertos.o: ../System/sys.h
 os_noisesys\freertos.o: ../Hardware/oled.h
+os_noisesys\freertos.o: ../Hardware/noisen.h

@@ -3,7 +3,7 @@
     "target": "nRF_test",
     "toolchain": "AC5",
     "toolchainLocation": "D:\\tt_Programs_Files\\Keil_v5\\ARM\\ARMCC",
-    "toolchainCfgFile": "c:\\Users\\Centaur1\\.vscode\\extensions\\cl.eide-3.13.2023060401\\res\\data\\models\\win32/arm.v5.model.json",
+    "toolchainCfgFile": "c:\\Users\\Centaur1\\.vscode\\extensions\\cl.eide-3.15.1\\res\\data\\models\\win32/arm.v5.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 16,

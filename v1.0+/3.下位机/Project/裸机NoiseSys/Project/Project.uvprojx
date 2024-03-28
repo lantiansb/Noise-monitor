@@ -10,13 +10,13 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.4.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x5000) IROM(0x08000000,0x10000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -668,6 +668,11 @@
               <FileType>1</FileType>
               <FilePath>..\System\timer.c</FilePath>
             </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\System\usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -677,6 +682,26 @@
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>Air724ug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\Air724ug.c</FilePath>
+            </File>
+            <File>
+              <FileName>noisen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\noisen.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>onenet_MQTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\onenet_MQTT.c</FilePath>
             </File>
           </Files>
         </Group>

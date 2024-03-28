@@ -24,6 +24,9 @@
 "os_noisesys\stm32f1xx_hal_uart.o"
 "os_noisesys\system_stm32f1xx.o"
 "os_noisesys\oled.o"
+"os_noisesys\air724ug.o"
+"os_noisesys\noisen.o"
+"os_noisesys\onenet_mqtt.o"
 "os_noisesys\croutine.o"
 "os_noisesys\event_groups.o"
 "os_noisesys\list.o"
@@ -34,6 +37,10 @@
 "os_noisesys\cmsis_os2.o"
 "os_noisesys\heap_4.o"
 "os_noisesys\port.o"
+"os_noisesys\delay.o"
+"os_noisesys\user_hardwaresinittask.o"
+"os_noisesys\user_noisesend.o"
+"os_noisesys\user_tasksinit.o"
 --strict --scatter "OS_NoiseSys\OS_NoiseSys.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

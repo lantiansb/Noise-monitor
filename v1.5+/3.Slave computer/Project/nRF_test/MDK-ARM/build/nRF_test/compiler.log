@@ -1,12 +1,10 @@
 >>> cc
 
-
-
-
-
-
-
+".\..\Core\Src\main.c", line 115: Warning:  #175-D: subscript out of range
+              rxdata[32] = 0; // 加入字符串结束符
+              ^
+.\..\Core\Src\main.c: 1 warning, 0 errors
 
 >>> ld
 
-Program Size: Code=7052 RO-data=2000 RW-data=48 ZI-data=1336  
+Program Size: Code=7028 RO-data=2000 RW-data=48 ZI-data=1368  
