@@ -1,0 +1,37 @@
+noisedetector\main.o: ../Core/Src/main.c
+noisedetector\main.o: ../Core/Inc/main.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+noisedetector\main.o: ../Core/Inc/stm32f1xx_hal_conf.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+noisedetector\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+noisedetector\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+noisedetector\main.o: ../Drivers/CMSIS/Include/core_cm3.h
+noisedetector\main.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stdint.h
+noisedetector\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
+noisedetector\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+noisedetector\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+noisedetector\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+noisedetector\main.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stddef.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
+noisedetector\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+noisedetector\main.o: ../Core/Inc/i2c.h
+noisedetector\main.o: ../Core/Inc/spi.h
+noisedetector\main.o: ../Core/Inc/usart.h
+noisedetector\main.o: ../Core/Inc/gpio.h
+noisedetector\main.o: ../User/24l01.h
+noisedetector\main.o: ../User/Delay.h
+noisedetector\main.o: ../User/OLED.h

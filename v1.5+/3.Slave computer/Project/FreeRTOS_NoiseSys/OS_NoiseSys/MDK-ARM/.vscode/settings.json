@@ -5,6 +5,7 @@
         "usart.h": "c",
         "gpio.h": "c",
         "dma.h": "c",
-        "cmsis_os.h": "c"
+        "cmsis_os.h": "c",
+        "user_tasksinit.h": "c"
     }
 }

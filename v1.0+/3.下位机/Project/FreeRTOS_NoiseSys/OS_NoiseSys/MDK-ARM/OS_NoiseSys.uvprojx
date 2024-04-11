@@ -7,13 +7,13 @@
       <TargetName>OS_NoiseSys</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.4.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x800FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3") TZ</Cpu>
           <FlashUtilSpec />
@@ -525,6 +525,21 @@
               <FileType>1</FileType>
               <FilePath>..\Hardware\OLED.c</FilePath>
             </File>
+            <File>
+              <FileName>Air724ug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\Air724ug.c</FilePath>
+            </File>
+            <File>
+              <FileName>noisen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\noisen.c</FilePath>
+            </File>
+            <File>
+              <FileName>onenet_MQTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\onenet_MQTT.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -584,9 +599,33 @@
         </Group>
         <Group>
           <GroupName>User/System</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\System\delay.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User/Tasks</GroupName>
+          <Files>
+            <File>
+              <FileName>user_HardwaresInitTask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Tasks\user_HardwaresInitTask.c</FilePath>
+            </File>
+            <File>
+              <FileName>user_NoiseSend.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Tasks\user_NoiseSend.c</FilePath>
+            </File>
+            <File>
+              <FileName>user_TasksInit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Tasks\user_TasksInit.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

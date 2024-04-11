@@ -29,7 +29,7 @@
  *         3.秘钥key去设备详情复制
  */
 
-#define Device_4
+#define Device_1
 
 const char *ProductID = "qYAZf2aVV6";
 const char *mqtturl = "mqtts.heclouds.com";
