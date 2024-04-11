@@ -99,6 +99,8 @@ int main(void)
     HAL_GPIO_WritePin(LED_T_GPIO_Port, LED_T_Pin, GPIO_PIN_SET);
     OLED_Init();
     OLED_ShowString(1, 1, "hello world!");
+
+    HAL_Delay(2000);
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -108,36 +110,37 @@ int main(void)
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
-        while (NRF24L01_Check())
-            ;
-        if (NRF24L01_RxPacket(rxdata) == 0) // �?旦接收到信息,则显示出�?.
+        //     while (NRF24L01_Check())
+        //         ;
+        //     if (NRF24L01_RxPacket(rxdata) == 0) // �??旦接收到信息,则显示出�??.
+        //     {
+        //         rxdata[32] = 0; // 加入字符串结束符
+        //         NRF24L01_TX_Mode();
+        //         NRF24L01_TxPacket(txdata);
+        //     }
+        //     HAL_Delay(500);
+        // }
+
+        NRF24L01_TX_Mode();
+        HAL_Delay(0);
+        while (1)
         {
-            rxdata[32] = 0; // 加入字符串结束符
-            NRF24L01_TX_Mode();
-            NRF24L01_TxPacket(txdata);
+            if (NRF24L01_TxPacket(txdata) == TX_OK)
+            {
+                OLED_ShowString(1, 1, "Sended DATA:");
+                OLED_ShowString(2, 1, (char *)txdata);
+            }
+            else
+            {
+                OLED_Clear();
+                OLED_ShowString(1, 1, "Sended fail!");
+            }
+            HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
+            HAL_Delay(500);
         }
-        HAL_Delay(500);
     }
 
-//     NRF24L01_TX_Mode();
-//     while (1)
-//     {
-//         if (NRF24L01_TxPacket(txdata) == TX_OK)
-//         {
-//             OLED_ShowString(1, 1, "Sended DATA:");
-//             OLED_ShowString(2, 1, (char *)txdata);
-//         }
-//         else
-//         {
-//             OLED_Clear();
-//             OLED_ShowString(1, 1, "Sended fail!");
-//         }
-//         HAL_GPIO_TogglePin(LED_T_GPIO_Port, LED_T_Pin);
-//         HAL_Delay(500);
-//     }
-// }
-
-/* USER CODE END 3 */
+    /* USER CODE END 3 */
 }
 
 /**
