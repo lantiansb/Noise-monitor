@@ -32,14 +32,14 @@ void HardwaresInitTask(void *argument)
         HAL_Delay(1000);
         // 初始化2.4G模块
         OLED_ShowString(2, 1, "2.4G Init...");
-        // while (!NRF24L01_Check())
-        //     HAL_Delay(1);
+        while (NRF24L01_Check())
+            HAL_Delay(1);
         // 初始化噪声传感器
         OLED_ShowString(3, 1, "Noisen Init...");
         Get_noise();
         // 初始化GPS
-        OLED_ShowString(3, 1, "GPS Init...");
-        Air780eg_Init();
+        // OLED_ShowString(3, 1, "GPS Init...");
+        // Air780eg_Init();
 
         OLED_Clear();
 

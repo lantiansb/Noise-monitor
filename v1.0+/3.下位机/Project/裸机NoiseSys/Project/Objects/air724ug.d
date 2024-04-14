@@ -1,12 +1,12 @@
 .\objects\air724ug.o: ..\Hardware\Air724ug.c
 .\objects\air724ug.o: ..\Hardware\Air724ug.h
-.\objects\air724ug.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\air724ug.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\air724ug.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\air724ug.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\air724ug.o: ..\System\delay.h
 .\objects\air724ug.o: ..\System\sys.h
 .\objects\air724ug.o: ..\Start\stm32f10x.h
 .\objects\air724ug.o: ..\Start\core_cm3.h
-.\objects\air724ug.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\air724ug.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\air724ug.o: ..\Start\system_stm32f10x.h
 .\objects\air724ug.o: ..\User\stm32f10x_conf.h
 .\objects\air724ug.o: ..\Library\stm32f10x_adc.h

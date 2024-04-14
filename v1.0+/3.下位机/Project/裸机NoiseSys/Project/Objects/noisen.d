@@ -1,7 +1,7 @@
 .\objects\noisen.o: ..\Hardware\noisen.c
 .\objects\noisen.o: ..\Start\stm32f10x.h
 .\objects\noisen.o: ..\Start\core_cm3.h
-.\objects\noisen.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\noisen.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\noisen.o: ..\Start\system_stm32f10x.h
 .\objects\noisen.o: ..\User\stm32f10x_conf.h
 .\objects\noisen.o: ..\Library\stm32f10x_adc.h

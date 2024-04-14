@@ -8,14 +8,14 @@ noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 noisedetector\delay.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 noisedetector\delay.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 noisedetector\delay.o: ../Drivers/CMSIS/Include/core_cm3.h
-noisedetector\delay.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stdint.h
+noisedetector\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisedetector\delay.o: ../Drivers/CMSIS/Include/cmsis_version.h
 noisedetector\delay.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 noisedetector\delay.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 noisedetector\delay.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-noisedetector\delay.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stddef.h
+noisedetector\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 noisedetector\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

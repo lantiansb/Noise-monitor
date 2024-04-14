@@ -7,14 +7,14 @@ noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 noisedetector\oled.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 noisedetector\oled.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 noisedetector\oled.o: ../Drivers/CMSIS/Include/core_cm3.h
-noisedetector\oled.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stdint.h
+noisedetector\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisedetector\oled.o: ../Drivers/CMSIS/Include/cmsis_version.h
 noisedetector\oled.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 noisedetector\oled.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 noisedetector\oled.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-noisedetector\oled.o: D:\Keil5 MDK\Keil-EXE\ARM\ARMCC\Bin\..\include\stddef.h
+noisedetector\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 noisedetector\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

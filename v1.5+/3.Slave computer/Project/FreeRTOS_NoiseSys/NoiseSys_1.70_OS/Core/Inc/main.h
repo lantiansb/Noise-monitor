@@ -41,8 +41,9 @@ extern "C"
     extern UART_HandleTypeDef huart1;
     extern UART_HandleTypeDef huart2;
     extern UART_HandleTypeDef huart3;
-    extern uint8_t txdata[32];
-    extern uint8_t rxdata[32];
+    extern uint8_t txdata[32];     // 用于发送的缓冲区
+    extern uint8_t txdata_loc[32]; // 用于发送GPS位置的缓冲区
+    extern uint8_t rxdata[32];     // 用于接收的缓冲区
     extern uint8_t Air780_rec_buf[100];
     extern char latitude[20], longitude[20];
     extern char dateStr[11], timeStr[9]; // 根据预期的数据格式分配足够的空间

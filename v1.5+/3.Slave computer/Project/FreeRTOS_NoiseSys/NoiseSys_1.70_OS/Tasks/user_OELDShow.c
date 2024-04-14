@@ -2,7 +2,7 @@
 #include "user_OELDShow.h"
 #include "OLED.h"
 
-uint8_t getLocationTimeFlag = 0; // 0-系统未获得位置时间；1-系统已经获得位置时间
+// uint8_t getLocationTimeFlag = 0; // 0-系统未获得位置时间；1-系统已经获得位置时间
 
 SysStatus getSysStatus(void)
 {
@@ -15,13 +15,14 @@ void OLEDShow(void)
 {
     uint32_t now_tick = 0;
     static SysStatus show_status = 0;
-    // 该函数每次开机只执行一次
-    if (getLocationTimeFlag == 0)
-    {
-        while (GPS_GetLocationTime())
-            ; // 通过Air780eg获取位置与时间
-        getLocationTimeFlag++;
-    }
+    // // 该函数每次开机只执行一次
+    // if (getLocationTimeFlag == 0)
+    // {
+    //     while (GPS_GetLocationTime())
+    //         ; // 通过Air780eg获取位置与时间
+    //     getLocationTimeFlag++;
+    //     GPSLocSend(); // 发送一次位置信息给上位机
+    // }
     while (1)
     {
         now_tick = osKernelGetTickCount();

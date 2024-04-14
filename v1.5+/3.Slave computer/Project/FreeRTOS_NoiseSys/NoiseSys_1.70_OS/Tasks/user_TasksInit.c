@@ -42,8 +42,8 @@ const osThreadAttr_t LEDTask_attributes = {
 osThreadId_t MeasureSendTaskHandle;
 const osThreadAttr_t MeasureSendTask_attributes = {
     .name = "MeasureSendTask",
-    .stack_size = 128 * 10,
-    .priority = (osPriority_t)osPriorityLow2,
+    .stack_size = 128 * 20,
+    .priority = (osPriority_t)osPriorityHigh,
 };
 
 // OLED task

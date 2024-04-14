@@ -3,7 +3,7 @@
 .\objects\onenet_mqtt.o: ..\Hardware\onenet_MQTT.h
 .\objects\onenet_mqtt.o: ..\Start\stm32f10x.h
 .\objects\onenet_mqtt.o: ..\Start\core_cm3.h
-.\objects\onenet_mqtt.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\onenet_mqtt.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\onenet_mqtt.o: ..\Start\system_stm32f10x.h
 .\objects\onenet_mqtt.o: ..\User\stm32f10x_conf.h
 .\objects\onenet_mqtt.o: ..\Library\stm32f10x_adc.h
@@ -30,8 +30,8 @@
 .\objects\onenet_mqtt.o: ..\Library\stm32f10x_usart.h
 .\objects\onenet_mqtt.o: ..\Library\stm32f10x_wwdg.h
 .\objects\onenet_mqtt.o: ..\Library\misc.h
-.\objects\onenet_mqtt.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\onenet_mqtt.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\onenet_mqtt.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\onenet_mqtt.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\onenet_mqtt.o: ..\System\delay.h
 .\objects\onenet_mqtt.o: ..\System\sys.h
 .\objects\onenet_mqtt.o: ..\System\usart.h

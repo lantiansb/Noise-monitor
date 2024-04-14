@@ -209,6 +209,9 @@
         "name": "Tasks",
         "files": [
           {
+            "path": "../Tasks/user_GPSSend.c"
+          },
+          {
             "path": "../Tasks/user_HardwaresInitTask.c"
           },
           {
@@ -226,8 +229,8 @@
     ]
   },
   "outDir": "build",
-  "deviceName": null,
-  "packDir": null,
+  "deviceName": "STM32F103C8",
+  "packDir": ".pack/Keil/STM32F1xx_DFP.2.3.0",
   "miscInfo": {
     "uid": "63593b2d53ad7edebb66f6512dbb82eb"
   },
@@ -352,7 +355,7 @@
       "uploadConfig": {
         "bin": "",
         "target": "stm32f1x",
-        "interface": "cmsis-dap",
+        "interface": "stlink-v2",
         "baseAddr": "0x08000000"
       },
       "uploadConfigMap": {
@@ -377,6 +380,19 @@
           "elFile": "None",
           "optionBytes": ".eide/noisesys_1.70_os.st.option.bytes.ini",
           "otherCmds": ""
+        },
+        "OpenOCD": {
+          "bin": "",
+          "target": "stm32f1x",
+          "interface": "cmsis-dap",
+          "baseAddr": "0x08000000"
+        },
+        "pyOCD": {
+          "bin": "",
+          "targetName": "stm32f103rc",
+          "baseAddr": "0x08000000",
+          "speed": "4M",
+          "config": ".eide/noisesys_1.70_os.pyocd.yaml"
         }
       },
       "custom_dep": {
@@ -401,7 +417,8 @@
         "sourceDirList": [],
         "defineList": [
           "USE_HAL_DRIVER",
-          "STM32F103xB"
+          "STM32F103xB",
+          "STM32F10X_MD"
         ]
       }
     }

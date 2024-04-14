@@ -83,7 +83,4 @@ uint8_t NRF24L01_Check(void);                                             // 检
 uint8_t NRF24L01_TxPacket(uint8_t *txbuf);                                // 发送一个包的数据
 uint8_t NRF24L01_RxPacket(uint8_t *rxbuf);                                // 接收一个包的数据
 
-extern uint8_t txdata[32];
-extern uint8_t rxdata[32];
-
 #endif

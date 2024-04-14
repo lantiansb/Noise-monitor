@@ -182,9 +182,15 @@ void DMA1_Channel3_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
     /* USER CODE BEGIN TIM4_IRQn 0 */
-    if(sysTimeStamp != 0)
-        sysTimeStamp++;
-    /* USER CODE END TIM4_IRQn 0 */
+    static uint16_t i = 0;
+    if (sysTimeStamp != 0)
+    {
+        if (i++ > 1000)
+        {
+            i = 0;
+            sysTimeStamp++;
+        }
+    } /* USER CODE END TIM4_IRQn 0 */
     HAL_TIM_IRQHandler(&htim4);
     /* USER CODE BEGIN TIM4_IRQn 1 */
 
