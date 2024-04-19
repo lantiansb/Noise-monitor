@@ -1,7 +1,7 @@
 noisesys_1.70_os\freertos.o: ../Core/Src/freertos.c
 noisesys_1.70_os\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-noisesys_1.70_os\freertos.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-noisesys_1.70_os\freertos.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+noisesys_1.70_os\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+noisesys_1.70_os\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisesys_1.70_os\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 noisesys_1.70_os\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 noisesys_1.70_os\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -41,3 +41,5 @@ noisesys_1.70_os\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_t
 noisesys_1.70_os\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 noisesys_1.70_os\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 noisesys_1.70_os\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+noisesys_1.70_os\freertos.o: ..\System\SysConf.h
+noisesys_1.70_os\freertos.o: ..\Tasks\user_TasksInit.h

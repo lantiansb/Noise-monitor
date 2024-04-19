@@ -1,8 +1,8 @@
 noisesys_1.70_os\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-noisesys_1.70_os\heap_4.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+noisesys_1.70_os\heap_4.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 noisesys_1.70_os\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-noisesys_1.70_os\heap_4.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-noisesys_1.70_os\heap_4.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+noisesys_1.70_os\heap_4.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+noisesys_1.70_os\heap_4.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisesys_1.70_os\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
 noisesys_1.70_os\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 noisesys_1.70_os\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

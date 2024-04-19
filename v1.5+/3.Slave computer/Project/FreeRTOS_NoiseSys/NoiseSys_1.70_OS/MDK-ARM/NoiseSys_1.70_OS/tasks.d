@@ -1,9 +1,9 @@
 noisesys_1.70_os\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-noisesys_1.70_os\tasks.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-noisesys_1.70_os\tasks.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+noisesys_1.70_os\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+noisesys_1.70_os\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 noisesys_1.70_os\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-noisesys_1.70_os\tasks.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-noisesys_1.70_os\tasks.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+noisesys_1.70_os\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+noisesys_1.70_os\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisesys_1.70_os\tasks.o: ../Core/Inc/FreeRTOSConfig.h
 noisesys_1.70_os\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 noisesys_1.70_os\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

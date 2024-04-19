@@ -3,6 +3,7 @@
 "noisesys_1.70_os\main.o"
 "noisesys_1.70_os\gpio.o"
 "noisesys_1.70_os\freertos.o"
+"noisesys_1.70_os\dma.o"
 "noisesys_1.70_os\i2c.o"
 "noisesys_1.70_os\spi.o"
 "noisesys_1.70_os\usart.o"
@@ -36,6 +37,15 @@
 "noisesys_1.70_os\cmsis_os2.o"
 "noisesys_1.70_os\heap_4.o"
 "noisesys_1.70_os\port.o"
+"noisesys_1.70_os\24l01.o"
+"noisesys_1.70_os\air780eg.o"
+"noisesys_1.70_os\noisen.o"
+"noisesys_1.70_os\oled.o"
+"noisesys_1.70_os\user_gpssend.o"
+"noisesys_1.70_os\user_hardwaresinittask.o"
+"noisesys_1.70_os\user_noisesend.o"
+"noisesys_1.70_os\user_oeldshow.o"
+"noisesys_1.70_os\user_tasksinit.o"
 --strict --scatter "NoiseSys_1.70_OS\NoiseSys_1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

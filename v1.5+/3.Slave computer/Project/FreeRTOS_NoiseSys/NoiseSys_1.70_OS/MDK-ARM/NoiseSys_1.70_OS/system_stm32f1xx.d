@@ -2,7 +2,7 @@ noisesys_1.70_os\system_stm32f1xx.o: ../Core/Src/system_stm32f1xx.c
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Include/core_cm3.h
-noisesys_1.70_os\system_stm32f1xx.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+noisesys_1.70_os\system_stm32f1xx.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -13,7 +13,7 @@ noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-noisesys_1.70_os\system_stm32f1xx.o: D:\tt_Programs_Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+noisesys_1.70_os\system_stm32f1xx.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 noisesys_1.70_os\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
