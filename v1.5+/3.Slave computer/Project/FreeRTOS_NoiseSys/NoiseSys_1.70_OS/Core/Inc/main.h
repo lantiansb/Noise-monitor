@@ -49,6 +49,8 @@ extern "C"
     extern char dateStr[11], timeStr[9]; // 根据预期的数据格式分配足够的空间
     extern uint32_t sysTimeStamp;
     extern uint8_t getLocationTimeFlag;
+    extern uint32_t ulFLASHFrameIndex;
+    extern uint8_t ucFLASHFrame[];
 
     /* USER CODE END ET */
 

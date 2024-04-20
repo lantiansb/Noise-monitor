@@ -4,6 +4,11 @@
 #define W25Q128_CS_GPIO_PORT FLASH_CS_GPIO_Port
 #define W25Q128_CS_GPIO_PIN FLASH_CS_Pin
 
+// 业务相关define
+#define FLASH_WRITER_START 0x000000 // w25q128的写入初始地址，地址范围为0x000000 ~ 0xFFFFFF
+#define NOISEFrame_SIZE 6           // 两字节噪声值，四字节时间戳
+#define INDEX_ADDRESS (0xfffff - 4) // 定义存储ulFLASHFrameIndex的地址
+
 /* W25Q128片选信号 */
 #define W25Q128_CS(x)                                                                                                                                                  \
     do                                                                                                                                                                 \
@@ -42,6 +47,7 @@ void w25q128_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen); // 写入W25
 
 /* 业务函数 */
 void vSaveNowIndex(void);
+void vGetNowIndex(void);
 void vSaveNowMesureValue(void);
 void vSaveAddrIndexUpdate(void);
 uint8_t *ucReadNoiseDataFrames(void);

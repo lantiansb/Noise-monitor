@@ -3,6 +3,7 @@
 #include "OLED.h"
 #include "noisen.h"
 #include "24l01.h"
+#include "w25q128.h"
 
 uint8_t getLocationTimeFlag = 0; // 0-系统未获得位置时间；1-系统已经获得位置时间
 
@@ -29,12 +30,19 @@ void NoiseSend(void *argument)
 }
 
 /**
- * @brief 自动遍历FLASH中的数据，发送历史数据
+ * @brief 自动遍历FLASH中的数据，发送历史数据，暂时是开机时自动使用一次
  *
  * @param argument
  */
 void NoiseSendHistroy(void *argument)
 {
+    uint8_t SentFlag = 0;          // MAX_TX-发送超过最大重复次数；TX_OK-发送成功
+    static uint32_t SentIndex = 0; // 这个临时index用于记录发送到哪个位置了
+    vGetNowIndex();                // 从FLASH中读取上次启动的最后保存位置
     NRF24L01_TX_Mode();
-    NRF24L01_TxPacket(txdata); // 通过2.4G模块发送一次
+    while ((SentIndex += NOISEFrame_SIZE) <= ulFLASHFrameIndex)
+    {
+        while (MAX_TX == NRF24L01_TxPacket(txdata))
+            ; // 通过2.4G模块发送一次，超时再发一次，直到发送成功
+    }
 }

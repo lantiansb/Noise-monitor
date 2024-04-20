@@ -4,10 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define FLASH_WRITER_START 0x000000 // w25q128的写入初始地址，地址范围为0x000000 ~ 0xFFFFFF
-#define NOISEFrame_SIZE 6           // 两字节噪声值，四字节时间戳
-#define INDEX_ADDRESS (0xfffff - 4) // 定义存储ulFLASHFrameIndex的地址
-
 uint8_t ucFLASHFrame[NOISEFrame_SIZE + 1] = {0}; // 多一字节为结束符
 uint32_t ulFLASHFrameIndex = FLASH_WRITER_START; // 保存地址索引
 
@@ -302,6 +298,15 @@ void w25q128_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen)
 void vSaveNowIndex(void)
 {
     w25q128_write((char *)&ulFLASHFrameIndex, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
+}
+
+/**
+ * @brief 获取当前FLASHFrameIndex（或上次开机最后保存的）
+ * 
+ */
+void vGetNowIndex(void)
+{
+    w25q128_read((char *)ucFLASHFrame, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
 }
 
 /**

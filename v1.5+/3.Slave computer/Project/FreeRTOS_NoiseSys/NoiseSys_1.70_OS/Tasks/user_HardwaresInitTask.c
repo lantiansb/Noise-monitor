@@ -8,6 +8,7 @@
 #include "OLED.h"
 #include "Air780eg.h"
 #include "W25Q128.h"
+#include "user_NoiseSend.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -32,7 +33,8 @@ void HardwaresInitTask(void *argument)
         // 初始化W25Q128
         OLED_ShowString(1, 1, "FLASH Init...");
         w25q128_init();
-        // w25q128_erase_chip(); // 开机发送完上次开机的历史数据后，擦除整个芯片，防止数据混乱
+        NoiseSendHistroy();
+        w25q128_erase_sector(0); // 开机发送完上次开机的历史数据后，擦除第一个扇区（暂时只用第一个扇区：4K吧，多的以后再说），防止数据混乱
         HAL_Delay(1000);
         // 初始化2.4G模块
         OLED_ShowString(2, 1, "2.4G Init...");
