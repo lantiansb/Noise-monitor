@@ -1445,8 +1445,8 @@ Section Cross References
     oled.o(i.OLED_WriteData) refers to oled.o(i.HAL_I2C_WriteByte) for HAL_I2C_WriteByte
     w25q128.o(i.spi2_read_write_byte) refers to stm32f1xx_hal_spi.o(i.HAL_SPI_TransmitReceive) for HAL_SPI_TransmitReceive
     w25q128.o(i.spi2_read_write_byte) refers to spi.o(.bss) for hspi2
-    w25q128.o(i.ucReadNoiseDataFrames) refers to w25q128.o(i.w25q128_read) for w25q128_read
-    w25q128.o(i.ucReadNoiseDataFrames) refers to h1_alloc.o(.text) for malloc
+    w25q128.o(i.vReadNoiseDataFrames) refers to w25q128.o(i.w25q128_read) for w25q128_read
+    w25q128.o(i.vReadNoiseDataFrames) refers to h1_alloc.o(.text) for malloc
     w25q128.o(i.vGetNowIndex) refers to w25q128.o(i.w25q128_read) for w25q128_read
     w25q128.o(i.vGetNowIndex) refers to w25q128.o(.data) for .data
     w25q128.o(i.vSaveAddrIndexUpdate) refers to w25q128.o(.data) for .data
@@ -2671,7 +2671,7 @@ Removing Unused input sections from the image.
     Removing w25q128.o(.rev16_text), (4 bytes).
     Removing w25q128.o(.revsh_text), (4 bytes).
     Removing w25q128.o(.rrx_text), (6 bytes).
-    Removing w25q128.o(i.ucReadNoiseDataFrames), (52 bytes).
+    Removing w25q128.o(i.vReadNoiseDataFrames), (52 bytes).
     Removing w25q128.o(i.w25q128_erase_chip), (56 bytes).
     Removing w25q128.o(.bss), (4096 bytes).
     Removing user_gpssend.o(.rev16_text), (4 bytes).

@@ -1,6 +1,9 @@
 {
     "folders": [
         {
+            "path": "."
+        },
+        {
             "path": ".."
         }
     ],
@@ -18,13 +21,16 @@
             "*.c++": "cpp",
             "*.cpp": "cpp",
             "*.cxx": "cpp",
-            "*.cc": "cpp"
+            "*.cc": "cpp",
+            "*.tcc": "c",
+            "cstdio": "c"
         },
         "[yaml]": {
             "editor.insertSpaces": true,
             "editor.tabSize": 4,
             "editor.autoIndent": "advanced"
-        }
+        },
+        "cortex-debug.variableUseNaturalFormat": true
     },
     "extensions": {
         "recommendations": [

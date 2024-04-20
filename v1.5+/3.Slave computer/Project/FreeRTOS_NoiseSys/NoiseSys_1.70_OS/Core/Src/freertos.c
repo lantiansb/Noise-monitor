@@ -49,24 +49,24 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-uint32_t defaultTaskBuffer[128];
-osStaticThreadDef_t defaultTaskControlBlock;
-const osThreadAttr_t defaultTask_attributes = {
-    .name = "defaultTask",
-    .cb_mem = &defaultTaskControlBlock,
-    .cb_size = sizeof(defaultTaskControlBlock),
-    .stack_mem = &defaultTaskBuffer[0],
-    .stack_size = sizeof(defaultTaskBuffer),
-    .priority = (osPriority_t)osPriorityNormal,
-};
+// osThreadId_t defaultTaskHandle;
+// uint32_t defaultTaskBuffer[128];
+// osStaticThreadDef_t defaultTaskControlBlock;
+// const osThreadAttr_t defaultTask_attributes = {
+//     .name = "defaultTask",
+//     .cb_mem = &defaultTaskControlBlock,
+//     .cb_size = sizeof(defaultTaskControlBlock),
+//     .stack_mem = &defaultTaskBuffer[0],
+//     .stack_size = sizeof(defaultTaskBuffer),
+//     .priority = (osPriority_t)osPriorityNormal,
+// };
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void *argument);
+// void StartDefaultTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -99,7 +99,7 @@ void MX_FREERTOS_Init(void)
 
     /* Create the thread(s) */
     /* creation of defaultTask */
-    defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+    // defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
     /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */

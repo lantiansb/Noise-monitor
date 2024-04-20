@@ -211,6 +211,7 @@ static void w25q128_write_nocheck(uint8_t *pbuf, uint32_t addr, uint16_t datalen
     }
 }
 
+// 这个函数，占用太大了！
 /*
 //写入W25Q128的FLASH，在指定地址开写入取指定长度的数据
 pubf：需要写入的数据
@@ -226,8 +227,8 @@ void w25q128_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen)
     uint16_t secremain;
     uint16_t i;
     uint8_t *w25q128_buf;
-    // c8T6内存太小啦，只能用malloc分配内存到堆区
-    w25q128_buf = (uint8_t*)malloc(4096 * sizeof(uint8_t));
+
+    w25q128_buf = g_w25q128_buf;
     secpos = addr / 4096;      /* 获取指定地址在哪片扇区 */
     secoff = addr % 4096;      /* 指定数据在在扇区内的偏移数据大小 */
     secremain = 4096 - secoff; /* 扇区剩余字节数 */
@@ -288,7 +289,6 @@ void w25q128_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen)
             }
         }
     }
-    free(w25q128_buf); // 释放内存
 }
 
 /**
@@ -297,16 +297,25 @@ void w25q128_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen)
  */
 void vSaveNowIndex(void)
 {
-    w25q128_write((char *)&ulFLASHFrameIndex, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
+    w25q128_write((uint8_t *)&ulFLASHFrameIndex, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
 }
 
 /**
  * @brief 获取当前FLASHFrameIndex（或上次开机最后保存的）
- * 
+ *
  */
 void vGetNowIndex(void)
 {
-    w25q128_read((char *)ucFLASHFrame, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
+    w25q128_read((uint8_t *)&ulFLASHFrameIndex, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
+}
+
+/**
+ * @brief 重置索引
+ *
+ */
+void vResetIndex(void)
+{
+    ulFLASHFrameIndex = FLASH_WRITER_START;
 }
 
 /**
@@ -315,8 +324,11 @@ void vGetNowIndex(void)
  */
 void vSaveNowMesureValue(void)
 {
-    sprintf((char *)ucFLASHFrame, (char *)&txdata[3]);
-    w25q128_write(ucFLASHFrame, ulFLASHFrameIndex, NOISEFrame_SIZE);
+    for (int i = 0; i < NOISEFrame_SIZE; i++)
+    {
+        ucFLASHFrame[i] = txdata[3 + i];
+    }
+    w25q128_write((uint8_t *)ucFLASHFrame, ulFLASHFrameIndex, NOISEFrame_SIZE);
     memset(ucFLASHFrame, 0, NOISEFrame_SIZE + 1);
 }
 
@@ -330,31 +342,16 @@ void vSaveAddrIndexUpdate(void)
 }
 
 /**
- * @brief 从头开始读取FLASH中的噪声数据帧
+ * @brief 从指定位置开始读取FLASH中的噪声数据帧
  *
- * @return 返回一个指向数据帧的指针
+ * @param startAddr 开始读取的地址
+ *
  */
-uint8_t *ucReadNoiseDataFrames(void)
+void vReadNoiseDataFrames(uint32_t startAddr)
 {
-    uint32_t addr = 0;
-    uint32_t ulFLASHFrameIndex;
-    char *dataFrames;
-
-    // 从FLASH中读取ulFLASHFrameIndex
-    w25q128_read((char *)&ulFLASHFrameIndex, INDEX_ADDRESS, sizeof(ulFLASHFrameIndex));
-
-    dataFrames = malloc(ulFLASHFrameIndex);
-
-    if (dataFrames == NULL)
+    w25q128_read(ucFLASHFrame, startAddr, NOISEFrame_SIZE);
+    for (uint8_t i = 0; i < NOISEFrame_SIZE; i++)
     {
-        return NULL; // 如果内存分配失败，返回NULL
+        txdata[3 + i] = ucFLASHFrame[i];
     }
-
-    while (addr <= ulFLASHFrameIndex)
-    {
-        w25q128_read(dataFrames + addr, addr, NOISEFrame_SIZE);
-        addr += NOISEFrame_SIZE;
-    }
-
-    return dataFrames;
 }
