@@ -42,3 +42,4 @@ noisesys_1.70_os\noisen.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mp
 noisesys_1.70_os\noisen.o: ..\System\SysConf.h
 noisesys_1.70_os\noisen.o: ..\Hardware\noisen.h
 noisesys_1.70_os\noisen.o: ..\Hardware\OLED.h
+noisesys_1.70_os\noisen.o: ..\Hardware\w25q128.h

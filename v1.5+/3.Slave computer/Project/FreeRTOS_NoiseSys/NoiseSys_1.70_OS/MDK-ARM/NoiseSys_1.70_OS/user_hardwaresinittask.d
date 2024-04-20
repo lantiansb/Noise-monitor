@@ -46,3 +46,5 @@ noisesys_1.70_os\user_hardwaresinittask.o: ../Middlewares/Third_Party/FreeRTOS/S
 noisesys_1.70_os\user_hardwaresinittask.o: ..\Tasks\user_TasksInit.h
 noisesys_1.70_os\user_hardwaresinittask.o: ..\Hardware\OLED.h
 noisesys_1.70_os\user_hardwaresinittask.o: ..\Hardware\Air780eg.h
+noisesys_1.70_os\user_hardwaresinittask.o: ..\Hardware\W25Q128.h
+noisesys_1.70_os\user_hardwaresinittask.o: ..\Tasks\user_NoiseSend.h

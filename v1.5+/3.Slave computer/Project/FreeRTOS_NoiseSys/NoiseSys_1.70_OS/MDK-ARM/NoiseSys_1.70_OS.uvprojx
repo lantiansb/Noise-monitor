@@ -10,7 +10,7 @@
       <TargetName>NoiseSys_1.70_OS</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -668,6 +668,11 @@
               <FileName>OLED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\W25Q128.c</FilePath>
             </File>
           </Files>
         </Group>

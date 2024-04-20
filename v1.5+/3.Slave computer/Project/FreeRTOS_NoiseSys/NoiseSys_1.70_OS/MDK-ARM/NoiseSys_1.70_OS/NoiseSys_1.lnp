@@ -41,6 +41,7 @@
 "noisesys_1.70_os\air780eg.o"
 "noisesys_1.70_os\noisen.o"
 "noisesys_1.70_os\oled.o"
+"noisesys_1.70_os\w25q128.o"
 "noisesys_1.70_os\user_gpssend.o"
 "noisesys_1.70_os\user_hardwaresinittask.o"
 "noisesys_1.70_os\user_noisesend.o"

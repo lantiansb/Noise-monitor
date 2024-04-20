@@ -44,3 +44,4 @@ noisesys_1.70_os\user_noisesend.o: ..\Tasks\user_NoiseSend.h
 noisesys_1.70_os\user_noisesend.o: ..\Hardware\OLED.h
 noisesys_1.70_os\user_noisesend.o: ..\Hardware\noisen.h
 noisesys_1.70_os\user_noisesend.o: ..\Hardware\24l01.h
+noisesys_1.70_os\user_noisesend.o: ..\Hardware\w25q128.h

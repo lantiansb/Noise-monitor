@@ -32,7 +32,8 @@ void HardwaresInitTask(void *argument)
         OLED_Init();
         // 初始化W25Q128
         OLED_ShowString(1, 1, "FLASH Init...");
-        w25q128_init();
+        while (FALSE == w25q128_init())
+            ;
         NoiseSendHistroy();
         w25q128_erase_sector(0); // 开机发送完上次开机的历史数据后，擦除第一个扇区（暂时只用第一个扇区：4K吧，多的以后再说），防止数据混乱
         HAL_Delay(1000);
@@ -44,7 +45,7 @@ void HardwaresInitTask(void *argument)
         OLED_ShowString(3, 1, "Noisen Init...");
         Get_noise();
         // 初始化GPS
-        OLED_ShowString(3, 1, "GPS Init...");
+        OLED_ShowString(4, 1, "GPS Init...");
         Air780eg_Init();
 
         OLED_Clear();
