@@ -24,7 +24,17 @@ void NoiseSend(void *argument)
         Get_noise(); // 更新一次噪声信号
         NRF24L01_TX_Mode();
         NRF24L01_TxPacket(txdata); // 通过2.4G模块发送一次
-        OLED_ShowNum(3, 1, (txdata[3] << 8) + txdata[4], 4);
         osDelayUntil(now_tick + 2000);
     }
+}
+
+/**
+ * @brief 自动遍历FLASH中的数据，发送历史数据
+ *
+ * @param argument
+ */
+void NoiseSendHistroy(void *argument)
+{
+    NRF24L01_TX_Mode();
+    NRF24L01_TxPacket(txdata); // 通过2.4G模块发送一次
 }

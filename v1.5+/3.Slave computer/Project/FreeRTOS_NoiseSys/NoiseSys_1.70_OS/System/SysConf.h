@@ -8,6 +8,10 @@ typedef enum
     uploadHistoryNoise = 2
 } SysStatus;
 
+#define bool	_Bool
+#define TRUE 1
+#define FALSE 0
+
 #define DEVICE_ID 0x02
 
 #endif /* __SYSCONF_H */

@@ -7,6 +7,7 @@
 #include "user_TasksInit.h"
 #include "OLED.h"
 #include "Air780eg.h"
+#include "W25Q128.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -26,9 +27,12 @@ void HardwaresInitTask(void *argument)
     while (1)
     {
         vTaskSuspendAll();
-        // 初始化OlED
+        // 初始化OLED
         OLED_Init();
-        OLED_ShowString(1, 1, "OLED: OK!");
+        // 初始化W25Q128
+        OLED_ShowString(1, 1, "FLASH Init...");
+        w25q128_init();
+        // w25q128_erase_chip(); // 开机发送完上次开机的历史数据后，擦除整个芯片，防止数据混乱
         HAL_Delay(1000);
         // 初始化2.4G模块
         OLED_ShowString(2, 1, "2.4G Init...");
@@ -38,8 +42,8 @@ void HardwaresInitTask(void *argument)
         OLED_ShowString(3, 1, "Noisen Init...");
         Get_noise();
         // 初始化GPS
-        // OLED_ShowString(3, 1, "GPS Init...");
-        // Air780eg_Init();
+        OLED_ShowString(3, 1, "GPS Init...");
+        Air780eg_Init();
 
         OLED_Clear();
 

@@ -8,5 +8,6 @@ void Air780FlagSet(void);
 void Air780eg_Init(void);
 uint8_t GPS_GetLocationTime(void);
 void GPS_CalcTimeStamp(void);
+void Timestamp_To_DateTime(uint32_t timestamp);
 
 #endif

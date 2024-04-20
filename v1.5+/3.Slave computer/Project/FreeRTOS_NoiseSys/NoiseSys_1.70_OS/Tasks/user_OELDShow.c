@@ -2,8 +2,6 @@
 #include "user_OELDShow.h"
 #include "OLED.h"
 
-// uint8_t getLocationTimeFlag = 0; // 0-系统未获得位置时间；1-系统已经获得位置时间
-
 SysStatus getSysStatus(void)
 {
     SysStatus sys_status;
@@ -28,17 +26,23 @@ void OLEDShow(void)
             {
                 OLED_ShowString(1, 1, latitude);
                 OLED_ShowString(2, 1, longitude);
-                OLED_ShowNum(4, 1, sysTimeStamp, 10);
-                // OLED_ShowHexNum(4, 1, txdata[5], 2);
-                // OLED_ShowHexNum(4, 3, txdata[6], 2);
-                // OLED_ShowHexNum(4, 5, txdata[7], 2);
-                // OLED_ShowHexNum(4, 7, txdata[8], 2);
+                OLED_ShowNum(3, 1, (txdata[3] << 8) + txdata[4], 4);
+                Timestamp_To_DateTime(sysTimeStamp);
+                OLED_ShowString(4, 1, timeStr);
             }
             else
                 OLED_ShowString(1, 1, "location...");
             break;
         case uploadHistoryNoise:
-            //
+            // 显示当前经纬度与时间戳
+            if (sysTimeStamp != 0)
+            {
+                
+                OLED_ShowString(1, 1, "uploading...");
+                OLED_ShowNum(4, 1, sysTimeStamp, 10);
+            }
+            else
+                OLED_ShowString(1, 1, "location...");
             break;
 
         default:

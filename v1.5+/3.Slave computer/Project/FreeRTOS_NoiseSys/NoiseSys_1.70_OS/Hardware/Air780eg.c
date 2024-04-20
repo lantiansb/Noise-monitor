@@ -154,3 +154,20 @@ void GPS_CalcTimeStamp(void)
         return;
     }
 }
+
+/**
+ * @brief 通过时间戳得到日期和时间
+ *
+ * @param timestamp 时间戳
+ * @param dateStr 日期字符串
+ * @param timeStr 时间字符串
+ */
+void Timestamp_To_DateTime(uint32_t timestamp)
+{
+    // 将时间戳转换为tm结构
+    struct tm *tm = localtime((time_t *)&timestamp);
+
+    // 格式化日期和时间字符串
+    strftime(dateStr, 20, "%Y/%m/%d", tm);
+    strftime(timeStr, 20, "%H:%M:%S", tm);
+}

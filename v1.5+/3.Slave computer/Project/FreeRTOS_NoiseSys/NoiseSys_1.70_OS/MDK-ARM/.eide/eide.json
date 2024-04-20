@@ -154,6 +154,9 @@
           },
           {
             "path": "../Hardware/OLED.c"
+          },
+          {
+            "path": "../Hardware/W25Q128.c"
           }
         ],
         "folders": []
