@@ -17,8 +17,8 @@ void Get_noise(void)
     HAL_UART_Receive(&huart2, (uint8_t *)usart2_rec_buf, 7, 1000);
     txdata[3] = usart2_rec_buf[3];
     txdata[4] = usart2_rec_buf[4];
-    // 将时间戳拆分到txdata数组中
-    txdata[5] = (uint8_t)(sysTimeStamp & 0xFF);         // 最低位字节
+    // 将时间戳拆分到txdata数组中，
+    txdata[5] = (uint8_t)(sysTimeStamp & 0xFF);         // 最低字节
     txdata[6] = (uint8_t)((sysTimeStamp >> 8) & 0xFF);  // 第二字节
     txdata[7] = (uint8_t)((sysTimeStamp >> 16) & 0xFF); // 第三字节
     txdata[8] = (uint8_t)((sysTimeStamp >> 24) & 0xFF); // 最高位字节
