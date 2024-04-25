@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SaveStatistic</class>
+ <widget class="QDialog" name="SaveStatistic">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>456</width>
+    <height>313</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	font: 9pt &quot;黑体&quot;;
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 4px 1px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 1px 1px;
+    border-radius: 4px;
+	border: 2px solid rgb(222, 222, 222);
+}
+
+QPushButton:hover{
+    background-color: #555555;
+	border: 2px solid #555555;
+    color: white;
+}
+
+#SaveStatistic{
+	color: rgb(0, 0, 0);
+	background-color:rgb(248, 248, 248);
+	font: 9pt &quot;黑体&quot;;
+}
+
+QLineEdit{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+}
+
+QGroupBox{
+	color: rgb(0, 0, 0);
+	font: 9pt &quot;黑体&quot;;
+}
+
+#frame{
+	border: 2px solid rgb(134, 134, 134);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="5" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>364</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">font: 9pt &quot;黑体&quot;;
+color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>导出每小时统计数据</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="3">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>保存路径</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="FilePath_Edit">
+           <property name="text">
+            <string>D:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QPushButton" name="SaveCSV_Button">
+        <property name="text">
+         <string>保存数据</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>文件名</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="FileName_Edit">
+           <property name="styleSheet">
+            <string notr="true">font: 9pt &quot;黑体&quot;;</string>
+           </property>
+           <property name="text">
+            <string>data.csv</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="Line" name="line">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(181, 181, 181);
+background-color: rgb(129, 129, 129);</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="Quit_Button">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>关闭</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Quit_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>SaveStatistic</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>402</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

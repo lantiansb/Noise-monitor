@@ -34,7 +34,6 @@ void HardwaresInitTask(void *argument)
         OLED_ShowString(1, 1, "FLASH Init...");
         while (FALSE == w25q128_init())
             ;
-        vSaveNowMesureValue(); // 测试用
         NoiseSendHistroy();
         w25q128_erase_sector(0); // 开机发送完上次开机的历史数据后，擦除第一个扇区（暂时只用第一个扇区：4K吧，多的以后再说），防止数据混乱
         vResetIndex();           // 重置index

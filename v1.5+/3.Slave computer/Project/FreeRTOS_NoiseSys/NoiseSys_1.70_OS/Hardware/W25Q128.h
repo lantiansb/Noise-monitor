@@ -7,7 +7,7 @@
 // 业务相关define
 #define FLASH_WRITER_START 0x000000 // w25q128的写入初始地址，地址范围为0x000000 ~ 0xFFFFFF
 #define NOISEFrame_SIZE 6           // 两字节噪声值，四字节时间戳
-#define INDEX_ADDRESS (0x00fff - 4) // 定义存储ulFLASHFrameIndex的地址
+#define INDEX_ADDRESS (0xfffff - 4) // 定义存储ulFLASHFrameIndex的地址
 
 /* W25Q128片选信号 */
 #define W25Q128_CS(x)                                                                                                                                                  \
