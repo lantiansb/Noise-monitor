@@ -36,6 +36,7 @@ public:
 public:
     void limitPlotInRange(void);
     void showHisPlotPoint(QMouseEvent *event);
+    void whenPortPop(void);
 
     void initNoiseDB_Plot(void);
     void initHisData_Plot(void);
@@ -68,6 +69,8 @@ private slots:
     void on_ClearFlag_Button_clicked();
     void on_DeviceFlag_Button_clicked();
     void on_GetHisData_Button_clicked();
+    void on_RefreshDataList_Button_clicked();
+
 public:
     struct Settings {
         QString name;
@@ -102,6 +105,9 @@ private:
     QVector<QVector<double>>savedDataHis;
     QVector<QVector<double>>timeListHis;
     QVector<QVector<double>>savedTimeListHis;
+
+    QVector<double>his_xValues;
+    QVector<double>his_yValues;
 
     struct Settings m_currentSettings;
 

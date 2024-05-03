@@ -185,7 +185,7 @@ void TIM4_IRQHandler(void)
     static uint16_t i = 0;
     if (sysTimeStamp != 0)
     {
-        if (i++ > 1000)
+        if (i++ > 998) // 998是因为定时器时钟不准，998差不多就是实际的1000ms，这样修改后误差率能降低到11s/24h，以后要改用RTC才行
         {
             i = 0;
             sysTimeStamp++;

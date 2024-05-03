@@ -32,6 +32,7 @@ void HardwaresInitTask(void *argument)
         OLED_Init();
         // 初始化W25Q128
         OLED_ShowString(1, 1, "FLASH Init...");
+        HAL_Delay(2000);
         while (FALSE == w25q128_init())
             ;
         NoiseSendHistroy();

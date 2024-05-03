@@ -25,7 +25,7 @@ void NoiseSend(void *argument)
         Get_noise(); // 更新一次噪声信号
         NRF24L01_TX_Mode();
         NRF24L01_TxPacket(txdata); // 通过2.4G模块发送一次
-        osDelayUntil(now_tick + 2000);
+        osDelayUntil(now_tick + 1000);
     }
 }
 

@@ -16,5 +16,6 @@ double integral(QVector<double>y, double h);
 QVector<double> pharseStr(QString str);
 QVector<double> GCJ02ToBD09(double lng, double lat);
 QVector<double> WGS84ToGCJ02(double lng, double lat);
+int findClosestSorted(const QVector<double>& data, double x);
 
 #endif // MYALGORITHM_H

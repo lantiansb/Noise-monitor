@@ -42,9 +42,9 @@ bool global_isWebLoaded = false;
 
 /** ***************************************************
  * @brief
- * 有个非常玄学的bug,如果一直按着窗口的标题栏,就无法接收串口
+ * 有个非常玄学的bug,如果一直按着窗口的标题栏,就无法接收连接器
  * 数据,目前所有的研究都表明,如果主线程堵塞,无论是否使用多线
- * 程等,均会造成串口数据接收失败,因此只能删去标题栏,自定义标
+ * 程等,均会造成连接器数据接收失败,因此只能删去标题栏,自定义标
  * 题栏了,所以要重新实现一遍窗口的拖动功能.
  * ************************************************* **/
 
@@ -75,6 +75,7 @@ void NoiseMonitorSys::mouseReleaseEvent(QMouseEvent *event)
 /// 设置子函数,保证滚动只能是x轴方向伸缩
 void NoiseMonitorSys::limitPlotInRange(void)
 {
+    this->ui->NoiseDB_Plot->yAxis->setRange(0, 120);
     this->ui->HisData_Plot->yAxis->setRange(0, 120);
 
     return;
@@ -94,19 +95,19 @@ void NoiseMonitorSys::showHisPlotPoint(QMouseEvent* event)
 
         double x = this->ui->HisData_Plot->xAxis->pixelToCoord(event->pos().x());
         double y = this->ui->HisData_Plot->yAxis->pixelToCoord(event->pos().y());
-        double distance = plottable->selectTest(event->pos(), true);
 
-        if(distance >= 0 && distance < 5)
-        {
-            QCPItemText *textLabel = new QCPItemText(this->ui->HisData_Plot);
-            textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
-            textLabel->position->setType(QCPItemPosition::ptPlotCoords);
-            textLabel->position->setCoords(x, y);
-            textLabel->setText(QString(" %1 ").arg(y));
-            textLabel->setFont(QFont(font().family(), 10));
-            textLabel->setPen(QPen(Qt::black));
-            textItems.append(textLabel);
-        }
+        /// 二分法查找与x最接近的数值所在的点
+        int xIndex = findClosestSorted(this->his_xValues, x);
+        double yValue = this->his_yValues[xIndex];
+
+        QCPItemText *textLabel = new QCPItemText(this->ui->HisData_Plot);
+        textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+        textLabel->position->setType(QCPItemPosition::ptPlotCoords);
+        textLabel->position->setCoords(x, y);
+        textLabel->setText(QString(" %1 ").arg(yValue));
+        textLabel->setFont(QFont(font().family(), 10));
+        textLabel->setPen(QPen(Qt::black));
+        textItems.append(textLabel);
         /// 上述代码中距离小于5像素,说明此时点击的位置与图表足够接近,可以根据需要调整
     }
     else
@@ -121,6 +122,15 @@ void NoiseMonitorSys::showHisPlotPoint(QMouseEvent* event)
     }
 
     this->ui->HisData_Plot->replot();
+
+    return;
+}
+
+/// 串口被物理拔下,弹出错误
+void NoiseMonitorSys::whenPortPop(void)
+{
+    this->on_Stop_Button_clicked();
+    global_isPortOpen = false;
 
     return;
 }
@@ -161,7 +171,12 @@ void NoiseMonitorSys::initNoiseDB_Plot(void)
     this->ui->NoiseDB_Plot->legend->setVisible(true);
     this->ui->NoiseDB_Plot->xAxis->setTickLabelRotation(25);
     this->ui->NoiseDB_Plot->xAxis->setRange(0, 200);
-    this->ui->NoiseDB_Plot->yAxis->setRange(0, 100);
+    this->ui->NoiseDB_Plot->yAxis->setRange(0, 120);
+
+    /// 设置图表可以被选中图层,可以鼠标拖拽,可以滚轮缩放,并设置缩放极限值,设置双击显示提示框,设置缩放后刷新图表
+    this->ui->NoiseDB_Plot->setInteractions(QCP::iSelectPlottables|QCP::iRangeZoom);
+    connect(this->ui->NoiseDB_Plot, &QCustomPlot::afterReplot, this, &NoiseMonitorSys::limitPlotInRange);
+
     this->ui->NoiseDB_Plot->replot();
 
     return;
@@ -201,7 +216,7 @@ void NoiseMonitorSys::initHisData_Plot(void)
     this->ui->HisData_Plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignLeft);
     this->ui->HisData_Plot->legend->setVisible(true);
     this->ui->HisData_Plot->xAxis->setTickLabelRotation(0);
-    this->ui->HisData_Plot->yAxis->setRange(0, 100);
+    this->ui->HisData_Plot->yAxis->setRange(0, 120);
 
     /// 设置图表可以被选中图层,可以鼠标拖拽,可以滚轮缩放,并设置缩放极限值,设置双击显示提示框,设置缩放后刷新图表
     this->ui->HisData_Plot->setInteractions(QCP::iSelectPlottables|QCP::iRangeDrag|QCP::iRangeZoom);
@@ -260,7 +275,7 @@ void NoiseMonitorSys::initHisData_List(void)
     return;
 }
 
-/// 初始化串口,配置属性结构体
+/// 初始化连接器,配置属性结构体
 void NoiseMonitorSys::initNoiseSlave(void)
 {
     this->m_currentSettings.name = QString("COM3");
@@ -298,7 +313,7 @@ void NoiseMonitorSys::initThreadConnect(void)
 /// QWebEngine初始化,加载离线百度地图
 void NoiseMonitorSys::initBaiduMap(void)
 {
-    this->ui->Map_Widget->setUrl(QUrl("file:///D:/QtGit/NoiseMonitorSys/BD_Map_API/index.html"));
+    this->ui->Map_Widget->setUrl(QUrl("file:///D:/Desktop/Noise-monitor/v1.5+/4.upper monitor/NoiseMonitorSys/BD_Map_API/index.html"));
     this->ui->Map_Widget->show();
 
     /// 地图加载完成修改全局变量,只有加载完成才能执行相关地图操作
@@ -310,7 +325,7 @@ void NoiseMonitorSys::initBaiduMap(void)
 
 /** ***************************************************
  * @brief
- *      通过私有变量的结构体设置,打开串口,更新标记值
+ *      通过私有变量的结构体设置,打开连接器,更新标记值
  * ************************************************* **/
 void NoiseMonitorSys::openPort(void)
 {
@@ -323,12 +338,14 @@ void NoiseMonitorSys::openPort(void)
 
     if(this->nd->open(QIODevice::ReadWrite))
     {
-        this->showState("<h4>成功打开串口！</h4>");
+        this->showState("<h4>成功打开连接器！</h4>");
         global_isPortOpen = true;
+        connect(&(*this->nd), &QSerialPort::errorOccurred, this, &NoiseMonitorSys::whenPortPop);
+
         return;
     }
 
-    this->showState("<h4>无法打开串口！</h4>");
+    this->showState("<h4>无法打开连接器！</h4>");
     global_isPortOpen = false;
 
     return;
@@ -336,7 +353,7 @@ void NoiseMonitorSys::openPort(void)
 
 /** ***************************************************
  * @brief
- *      非常简单的方法,仅是用来关闭串口
+ *      非常简单的方法,仅是用来关闭连接器
  * ************************************************* **/
 void NoiseMonitorSys::closePort(void)
 {
@@ -358,38 +375,43 @@ void NoiseMonitorSys::updataData(void)
 
     QByteArray res = this->nd->readAll();
 
-    /// 如果首个位置上不是0xAA或者0xFF,或者第二位不是有效id值,不是有效数据,直接跳过
-    if(res.length()  < 2)
-        return;
-
-    idTemp = this->idList.indexOf((int)res.at(1));
-
-    if(((quint8)res.at(0) != (quint8)0xAA) && ((quint8)res.at(0) != (quint8)0xFF) && (idTemp == -1))
-        return;
-
-    /// 循环读取缓冲区,拼接缓冲区中的经纬度数据字符
-    if((quint8)res.at(0) == 0xAA)
+    /// 循环读取缓冲区接收到的所有数据的包
+    for(int i = 0; (i + 1) < res.length(); ++i)
     {
-        locationTemp.clear();
-        for(int i = 2; ((char)(res.at(i)) != '\0') && (i < res.length()); ++i)
-            locationTemp += tr("%1").arg(res.at(i));
+        if(((quint8)res.at(i) != (quint8)0xAA) && ((quint8)res.at(i) != (quint8)0xFF))
+            continue;
 
-        this->location[idTemp] = pharseStr(locationTemp);
-        this->location[idTemp] = WGS84ToGCJ02(this->location[idTemp][0], this->location[idTemp][1]);
-        this->location[idTemp] = GCJ02ToBD09(this->location[idTemp][0], this->location[idTemp][1]);
-    }
-    /// 0xFF打头的数据是噪声分贝值和时间戳数据
-    else if((quint8)res.at(0) == 0xFF)
-    {
-        dbTemp = ((quint8)res.at(2) * 256.0 + (quint8)res.at(3)) / 10.0;
+        idTemp = this->idList.indexOf((int)res.at(i+1));
+        if(idTemp == -1)
+            continue;
 
-        /// 接收下位机发送的时间数据,时间戳需要格式化到与上位机一致
-        for(int k = 3; k >= 0; --k)
+        /// 循环读取缓冲区,拼接缓冲区中的经纬度数据字符
+        if((quint8)res.at(i) == 0xAA)
         {
-            slaveTime <<= 8;
-            slaveTime += (quint8)(res.at(4+k));
+            locationTemp.clear();
+            for(i += 2; (i < res.length()) && ((char)(res.at(i)) != '\0'); ++i)
+                locationTemp += tr("%1").arg(res.at(i));
+
+            this->location[idTemp] = pharseStr(locationTemp);
+            this->location[idTemp] = WGS84ToGCJ02(this->location[idTemp][0], this->location[idTemp][1]);
+            this->location[idTemp] = GCJ02ToBD09(this->location[idTemp][0], this->location[idTemp][1]);
         }
-        this->globalSlaveTime = (double)(slaveTime - 28798);
+        /// 0xFF打头的数据是噪声分贝值和时间戳数据
+        else if((quint8)res.at(i) == 0xFF)
+        {
+            if( (i + 7) >= res.length() )
+                return;
+
+            dbTemp = ((quint8)res.at(i+2) * 256.0 + (quint8)res.at(i+3)) / 10.0;
+
+            /// 接收下位机发送的时间数据
+            for(int k = 3; k >= 0; --k)
+            {
+                slaveTime <<= 8;
+                slaveTime += (quint8)(res.at(i+4+k));
+            }
+            this->globalSlaveTime = (double)(slaveTime - 28798);
+        }
 
         /// 保存数据,如果超过250个数据,就将其保存到缓冲区
         if(this->data[idTemp].length() > 250)
@@ -496,9 +518,11 @@ void NoiseMonitorSys::updatePlotSlot(void)
                                             this->timeList[this->nowIdChoice].back());
     this->ui->NoiseDB_Plot->replot();
 
-    this->ui->Position_Label->setText(tr("坐标:(%1, %2)").arg(
-            QString::number(this->location[this->nowIdChoice][0], 'f', 4),
-            QString::number(this->location[this->nowIdChoice][1], 'f', 4)
+    this->ui->Latitude_Label->setText(tr("%1").arg(
+        QString::number(this->location[this->nowIdChoice][0], 'f', 10)
+        ));
+    this->ui->Longtitude_Label->setText(tr("%1").arg(
+        QString::number(this->location[this->nowIdChoice][1], 'f', 10)
         ));
 
     return;
@@ -526,7 +550,7 @@ void NoiseMonitorSys::refreshHisPlot(double from, double to)
 
     if(this->nowIdChoice == -1)
     {
-        this->showState("未选中任何设备！");
+        this->showState("<h4>未选中任何设备！</h4>");
         return;
     }
 
@@ -546,11 +570,16 @@ void NoiseMonitorSys::refreshHisPlot(double from, double to)
     this->ui->HisData_Plot->removeGraph(0);
     this->ui->HisData_Plot->addGraph(0);
     this->ui->HisData_Plot->graph(0)->setName(tr("历史数据(id:%1)").arg(this->idList[this->nowIdChoice]));
+    QVector<double>().swap(this->his_xValues);
+    QVector<double>().swap(this->his_yValues);
+
     while(hisData.next())
     {
-        this->ui->HisData_Plot->graph(0)->addData(hisData.value(0).toDouble(), hisData.value(1).toDouble());
+        this->his_xValues.append(hisData.value(0).toDouble());
+        this->his_yValues.append(hisData.value(1).toDouble());
         db.append(pow(10.0, 0.1 * hisData.value(1).toDouble()));
     }
+    this->ui->HisData_Plot->graph(0)->setData(this->his_xValues, this->his_yValues);
 
     ///更新图表之后还需要更新统计结果,仅十个数据显然不能进行统计
     if(db.length() <= 10)
@@ -581,6 +610,7 @@ void NoiseMonitorSys::refreshHisPlot(double from, double to)
  * ************************************************* **/
 void NoiseMonitorSys::showState(QString text)
 {
+    this->ui->State_Edit->moveCursor(QTextCursor::End);
     this->ui->State_Edit->insertHtml(text);
     this->ui->State_Edit->insertPlainText("\n");
 }
@@ -604,10 +634,12 @@ void NoiseMonitorSys::on_ChooseDevice_Button_clicked()
         this->ui->NoiseDB_Plot->replot();
         this->showState(tr("<h4>选中设备id:%1</h4>").arg(this->idList[choice]));
 
-        this->ui->Position_Label->setText(tr("坐标:(%1, %2)").arg(
-                QString::number(this->location[this->nowIdChoice][0], 'f', 4),
-                QString::number(this->location[this->nowIdChoice][1], 'f', 4)
+        this->ui->Latitude_Label->setText(tr("%1").arg(
+                QString::number(this->location[this->nowIdChoice][0], 'f', 10)
             ));
+        this->ui->Longtitude_Label->setText(tr("%1").arg(
+            QString::number(this->location[this->nowIdChoice][1], 'f', 10)
+             ));
     }
 
     if(global_isQuery)
@@ -635,7 +667,7 @@ void NoiseMonitorSys::on_CalHisData_Button_clicked()
     /// 如果没有选中监测设备,跳过
     if(this->nowIdChoice == -1)
     {
-        this->showState("未选中任何设备！");
+        this->showState("<h4>未选中任何设备！</h4>");
         return;
     }
     global_isQuery = true;
@@ -688,8 +720,8 @@ void NoiseMonitorSys::on_SaveStatistic_Button_clicked()
     dlg->setWindowFlags(Qt::FramelessWindowHint);
 
     /// Step2
-    dlg->move((QApplication::desktop()->width()-dlg->width())/2,
-              (QApplication::desktop()->height()-dlg->height())/2);
+    dlg->move((QApplication::desktop()->width()-dlg->width()) / 2,
+              (QApplication::desktop()->height()-dlg->height()) / 2);
 
     dlg->setDataAndId(this->idList[this->nowIdChoice], this->ui->HisData_Plot->graph(0)->data());
     dlg->show();
@@ -704,7 +736,7 @@ void NoiseMonitorSys::on_Start_Button_clicked()
     qreal curSeclf = QDateTime::currentMSecsSinceEpoch() / 1000.0;
     if(!global_isPortOpen)
     {
-        this->showState(tr("<h4>串口无法读取，运行失败！@%1</h4>").arg(QDateTime::fromSecsSinceEpoch(curSeclf).toString()));
+        this->showState(tr("<h4>连接器无法读取，运行失败！@%1</h4>").arg(QDateTime::fromSecsSinceEpoch(curSeclf).toString()));
         global_isRunning = false;
         return;
     }
@@ -744,7 +776,7 @@ void NoiseMonitorSys::on_Stop_Button_clicked()
     return;
 }
 
-/// 点击与下位机通讯,更新串口连接信息
+/// 点击与下位机通讯,更新连接器连接信息
 void NoiseMonitorSys::on_Connect_Button_clicked()
 {
     this->closePort();
@@ -835,4 +867,28 @@ void NoiseMonitorSys::on_DeviceFlag_Button_clicked()
 /// 获取历史数据,获取历史数据时,不允许同时启动实时监控功能,读一个存一个
 void NoiseMonitorSys::on_GetHisData_Button_clicked()
 {
+}
+
+/// 点击刷新按钮,更新数据库列表
+void NoiseMonitorSys::on_RefreshDataList_Button_clicked()
+{
+    QVector<QString>().swap(this->searchList);
+    this->nowHisChoice = -1;
+
+    QSqlQuery hisList = this->db->db_SearchSQL("SELECT name FROM sqlite_master WHERE type='table';");
+    QStringList showList;
+
+    hisList.next();
+    while(hisList.next())
+    {
+        showList.append(QString("·%1").arg(hisList.value(0).toString()));
+            this->searchList.append(hisList.value(0).toString());
+    }
+
+    QStringListModel* listModel = new QStringListModel(showList);
+    this->ui->HisData_List->setModel(listModel);
+
+    this->showState("<h4>已成功刷新历史数据列表！</h4>");
+
+    return;
 }

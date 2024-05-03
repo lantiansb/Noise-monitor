@@ -107,3 +107,49 @@ QVector<double> GCJ02ToBD09(double lng, double lat)
 
     return QVector<double>{bd_lng, bd_lat};
 }
+
+/** ***************************************************
+ * @param
+ *      const QVector<double>& data: 被查找的数组
+ *      double x: 找到与x最近的数字的索引
+ * @brief
+ *      由万能的GPT4生成，二分法找到与目标最接近的数字的索引
+ * ************************************************* **/
+int findClosestSorted(const QVector<double>& data, double x)
+{
+    /// 数据为空时返回-1
+    if (data.isEmpty()) return -1;
+
+    int low = 0;
+    int high = data.size() - 1;
+
+    /// 如果x小于等于最小值，返回第一个元素的索引
+    /// /// 如果x大于等于最大值，返回最后一个元素的索引
+    if (x <= data[low]) return low;
+    if (x >= data[high]) return high;
+
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+
+        if (data[mid] == x)
+            return mid;
+        else if (data[mid] < x)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+
+    /// 此时low > high。比较data[low]和data[high]哪个更接近x
+    if (low >= data.size())
+        low = data.size() - 1;
+
+    if (high < 0)
+        high = 0;
+
+    /// 由于data已经排序，low指向第一个大于x的元素，high指向最后一个小于x的元素
+    if ((low < data.size() && fabs(x - data[low]) < fabs(x - data[high])))
+        return low;
+    else
+        return high;
+}
